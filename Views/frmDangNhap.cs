@@ -28,5 +28,22 @@ namespace QUANLYTHUEXEOTO
             frmMain frm = new frmMain();
             frm.Show();
         }
+
+        private void btnDangKy_Click(object sender, EventArgs e)
+        {
+            DialogResult dr;
+            dr = MessageBox.Show("Bạn cần đăng ký thành viên trước để đăng kí tài khoản!", "Thông Tin!", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+            if (dr == DialogResult.Yes)
+            {
+                this.Hide();
+                frmMember frm = new frmMember();
+                frm.Show();
+            }
+            else
+            {
+                Application.Exit();
+            }
+            
+        }
     }
 }

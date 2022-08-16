@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace QUANLYTHUEXEOTO.Forms
 {
-    public partial class frmProduct : Form
+    public partial class frmAccessories : Form
     {
-        public frmProduct()
+        public frmAccessories()
         {
             InitializeComponent();
         }
@@ -31,15 +31,31 @@ namespace QUANLYTHUEXEOTO.Forms
             }
             lblChuDe.ForeColor = ThemeColor.SecondaryColor;
             lblInfo.ForeColor = ThemeColor.PrimaryColor;
-            lblTenXe.ForeColor = ThemeColor.PrimaryColor;
-            lblMauXe.ForeColor = ThemeColor.PrimaryColor;
-            lblSoChoNgoi.ForeColor = ThemeColor.PrimaryColor;
+            lblTenPhuKien.ForeColor = ThemeColor.PrimaryColor;
             lblDonGia.ForeColor = ThemeColor.PrimaryColor;
         }
 
-        private void frmProduct_Load(object sender, EventArgs e)
+        private void frmAccessories_Load(object sender, EventArgs e)
         {
             LoadTheme();
+        }
+
+        private void dgvPhuKien_CellMouseMove(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            if (e.RowIndex > -1)
+            {
+                dgvPhuKien.Rows[e.RowIndex].DefaultCellStyle.BackColor = Color.FromArgb(192, 255, 255);
+                dgvPhuKien.Rows[e.RowIndex].DefaultCellStyle.ForeColor = Color.Black;
+            }
+        }
+
+        private void dgvPhuKien_CellMouseLeave(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex > -1)
+            {
+                dgvPhuKien.Rows[e.RowIndex].DefaultCellStyle.BackColor = Color.White;
+                dgvPhuKien.Rows[e.RowIndex].DefaultCellStyle.ForeColor = Color.Black;
+            }
         }
     }
 }

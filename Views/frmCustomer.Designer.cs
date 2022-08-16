@@ -29,7 +29,7 @@ namespace QUANLYTHUEXEOTO.Forms
         /// </summary>
         private void InitializeComponent()
         {
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvKhachHang = new System.Windows.Forms.DataGridView();
             this.stt = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.HOTENKH = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DIENTHOAI = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -47,51 +47,59 @@ namespace QUANLYTHUEXEOTO.Forms
             this.customButton2 = new QUANLYTHUEXEOTO.CustomControls.CustomButton();
             this.customButton3 = new QUANLYTHUEXEOTO.CustomControls.CustomButton();
             this.txtTimKiem = new QUANLYTHUEXEOTO.CustomControls.Textbox();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvKhachHang)).BeginInit();
             this.SuspendLayout();
             // 
-            // dataGridView1
+            // dgvKhachHang
             // 
-            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.dgvKhachHang.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.Control;
-            this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgvKhachHang.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvKhachHang.BackgroundColor = System.Drawing.SystemColors.Control;
+            this.dgvKhachHang.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvKhachHang.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvKhachHang.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.stt,
             this.HOTENKH,
             this.DIENTHOAI,
             this.CMND,
             this.DIACHI});
-            this.dataGridView1.Location = new System.Drawing.Point(239, 50);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(383, 340);
-            this.dataGridView1.TabIndex = 71;
+            this.dgvKhachHang.Location = new System.Drawing.Point(239, 50);
+            this.dgvKhachHang.Name = "dgvKhachHang";
+            this.dgvKhachHang.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvKhachHang.Size = new System.Drawing.Size(383, 340);
+            this.dgvKhachHang.TabIndex = 71;
+            this.dgvKhachHang.CellMouseLeave += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvKhachHang_CellMouseLeave);
+            this.dgvKhachHang.CellMouseMove += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvKhachHang_CellMouseMove);
             // 
             // stt
             // 
+            this.stt.FillWeight = 37.37905F;
             this.stt.HeaderText = "STT";
             this.stt.Name = "stt";
             // 
             // HOTENKH
             // 
+            this.HOTENKH.FillWeight = 134.267F;
             this.HOTENKH.HeaderText = "Họ Tên Khách Hàng";
             this.HOTENKH.Name = "HOTENKH";
             // 
             // DIENTHOAI
             // 
+            this.DIENTHOAI.FillWeight = 105.178F;
             this.DIENTHOAI.HeaderText = "Điện Thoại";
             this.DIENTHOAI.Name = "DIENTHOAI";
             // 
             // CMND
             // 
+            this.CMND.FillWeight = 88.8325F;
             this.CMND.HeaderText = "CMND";
             this.CMND.Name = "CMND";
             // 
             // DIACHI
             // 
+            this.DIACHI.FillWeight = 134.3435F;
             this.DIACHI.HeaderText = "Địa Chỉ";
             this.DIACHI.Name = "DIACHI";
             // 
@@ -157,93 +165,93 @@ namespace QUANLYTHUEXEOTO.Forms
             // 
             // customDatePicker1
             // 
-            this.customDatePicker1.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.customDatePicker1.BorderColor = System.Drawing.Color.MediumSlateBlue;
             this.customDatePicker1.BorderSize = 2;
             this.customDatePicker1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F);
             this.customDatePicker1.Location = new System.Drawing.Point(7, 227);
             this.customDatePicker1.MinimumSize = new System.Drawing.Size(4, 25);
             this.customDatePicker1.Name = "customDatePicker1";
             this.customDatePicker1.Size = new System.Drawing.Size(225, 25);
-            this.customDatePicker1.SkinColor = System.Drawing.Color.MediumSlateBlue;
+            this.customDatePicker1.SkinColor = System.Drawing.Color.White;
             this.customDatePicker1.TabIndex = 83;
-            this.customDatePicker1.TextColor = System.Drawing.Color.White;
+            this.customDatePicker1.TextColor = System.Drawing.Color.Black;
             // 
             // customDatePicker2
             // 
-            this.customDatePicker2.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.customDatePicker2.BorderColor = System.Drawing.Color.MediumSlateBlue;
             this.customDatePicker2.BorderSize = 2;
             this.customDatePicker2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F);
             this.customDatePicker2.Location = new System.Drawing.Point(7, 277);
             this.customDatePicker2.MinimumSize = new System.Drawing.Size(4, 25);
             this.customDatePicker2.Name = "customDatePicker2";
             this.customDatePicker2.Size = new System.Drawing.Size(225, 25);
-            this.customDatePicker2.SkinColor = System.Drawing.Color.MediumSlateBlue;
+            this.customDatePicker2.SkinColor = System.Drawing.Color.White;
             this.customDatePicker2.TabIndex = 84;
-            this.customDatePicker2.TextColor = System.Drawing.Color.White;
+            this.customDatePicker2.TextColor = System.Drawing.Color.Black;
             // 
             // customButton1
             // 
-            this.customButton1.BackColor = System.Drawing.Color.MediumSlateBlue;
-            this.customButton1.BackgroundColor = System.Drawing.Color.MediumSlateBlue;
-            this.customButton1.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.customButton1.BorderRadius = 0;
-            this.customButton1.BorderSize = 0;
+            this.customButton1.BackColor = System.Drawing.SystemColors.Control;
+            this.customButton1.BackgroundColor = System.Drawing.SystemColors.Control;
+            this.customButton1.BorderColor = System.Drawing.Color.MediumSlateBlue;
+            this.customButton1.BorderRadius = 20;
+            this.customButton1.BorderSize = 2;
             this.customButton1.FlatAppearance.BorderSize = 0;
             this.customButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.customButton1.ForeColor = System.Drawing.Color.White;
+            this.customButton1.ForeColor = System.Drawing.Color.Black;
             this.customButton1.Location = new System.Drawing.Point(58, 133);
             this.customButton1.Name = "customButton1";
             this.customButton1.Size = new System.Drawing.Size(120, 40);
             this.customButton1.TabIndex = 86;
             this.customButton1.Text = "Tìm Kiếm";
-            this.customButton1.TextColor = System.Drawing.Color.White;
+            this.customButton1.TextColor = System.Drawing.Color.Black;
             this.customButton1.UseVisualStyleBackColor = false;
             // 
             // customButton2
             // 
-            this.customButton2.BackColor = System.Drawing.Color.MediumSlateBlue;
-            this.customButton2.BackgroundColor = System.Drawing.Color.MediumSlateBlue;
-            this.customButton2.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.customButton2.BorderRadius = 0;
-            this.customButton2.BorderSize = 0;
+            this.customButton2.BackColor = System.Drawing.SystemColors.Control;
+            this.customButton2.BackgroundColor = System.Drawing.SystemColors.Control;
+            this.customButton2.BorderColor = System.Drawing.Color.MediumSlateBlue;
+            this.customButton2.BorderRadius = 20;
+            this.customButton2.BorderSize = 2;
             this.customButton2.FlatAppearance.BorderSize = 0;
             this.customButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.customButton2.ForeColor = System.Drawing.Color.White;
+            this.customButton2.ForeColor = System.Drawing.Color.Black;
             this.customButton2.Location = new System.Drawing.Point(58, 308);
             this.customButton2.Name = "customButton2";
             this.customButton2.Size = new System.Drawing.Size(120, 40);
             this.customButton2.TabIndex = 87;
             this.customButton2.Text = "Lọc Khách Hàng";
-            this.customButton2.TextColor = System.Drawing.Color.White;
+            this.customButton2.TextColor = System.Drawing.Color.Black;
             this.customButton2.UseVisualStyleBackColor = false;
             // 
             // customButton3
             // 
-            this.customButton3.BackColor = System.Drawing.Color.MediumSlateBlue;
-            this.customButton3.BackgroundColor = System.Drawing.Color.MediumSlateBlue;
-            this.customButton3.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.customButton3.BorderRadius = 0;
-            this.customButton3.BorderSize = 0;
+            this.customButton3.BackColor = System.Drawing.SystemColors.Control;
+            this.customButton3.BackgroundColor = System.Drawing.SystemColors.Control;
+            this.customButton3.BorderColor = System.Drawing.Color.MediumSlateBlue;
+            this.customButton3.BorderRadius = 20;
+            this.customButton3.BorderSize = 2;
             this.customButton3.FlatAppearance.BorderSize = 0;
             this.customButton3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.customButton3.ForeColor = System.Drawing.Color.White;
+            this.customButton3.ForeColor = System.Drawing.Color.Black;
             this.customButton3.Location = new System.Drawing.Point(58, 364);
             this.customButton3.Name = "customButton3";
             this.customButton3.Size = new System.Drawing.Size(120, 40);
             this.customButton3.TabIndex = 88;
             this.customButton3.Text = "Hủy";
-            this.customButton3.TextColor = System.Drawing.Color.White;
+            this.customButton3.TextColor = System.Drawing.Color.Black;
             this.customButton3.UseVisualStyleBackColor = false;
             // 
             // txtTimKiem
             // 
             this.txtTimKiem.BackColor = System.Drawing.SystemColors.Window;
             this.txtTimKiem.BorderColor = System.Drawing.Color.MediumSlateBlue;
-            this.txtTimKiem.BorderFocusColor = System.Drawing.Color.HotPink;
+            this.txtTimKiem.BorderFocusColor = System.Drawing.Color.Black;
             this.txtTimKiem.BorderRadius = 15;
             this.txtTimKiem.BorderSize = 2;
             this.txtTimKiem.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTimKiem.ForeColor = System.Drawing.Color.HotPink;
+            this.txtTimKiem.ForeColor = System.Drawing.Color.Black;
             this.txtTimKiem.Location = new System.Drawing.Point(7, 96);
             this.txtTimKiem.Margin = new System.Windows.Forms.Padding(4);
             this.txtTimKiem.Multiline = true;
@@ -271,14 +279,14 @@ namespace QUANLYTHUEXEOTO.Forms
             this.Controls.Add(this.lblDenNgay);
             this.Controls.Add(this.lblTuNgay);
             this.Controls.Add(this.lblLocKH);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dgvKhachHang);
             this.Controls.Add(this.lblInfo);
             this.Controls.Add(this.lblChuDe);
             this.Controls.Add(this.lblTimKiem);
             this.Name = "frmCustomer";
             this.Text = "Quản Lý Khách Hàng";
             this.Load += new System.EventHandler(this.frmCustomer_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvKhachHang)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -286,7 +294,7 @@ namespace QUANLYTHUEXEOTO.Forms
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvKhachHang;
         private System.Windows.Forms.Label lblInfo;
         private System.Windows.Forms.Label lblChuDe;
         private System.Windows.Forms.Label lblTimKiem;
@@ -295,14 +303,14 @@ namespace QUANLYTHUEXEOTO.Forms
         private System.Windows.Forms.Label lblDenNgay;
         private CustomControls.CustomDatePicker customDatePicker1;
         private CustomControls.CustomDatePicker customDatePicker2;
+        private CustomControls.CustomButton customButton1;
+        private CustomControls.CustomButton customButton2;
+        private CustomControls.CustomButton customButton3;
+        private CustomControls.Textbox txtTimKiem;
         private System.Windows.Forms.DataGridViewTextBoxColumn stt;
         private System.Windows.Forms.DataGridViewTextBoxColumn HOTENKH;
         private System.Windows.Forms.DataGridViewTextBoxColumn DIENTHOAI;
         private System.Windows.Forms.DataGridViewTextBoxColumn CMND;
         private System.Windows.Forms.DataGridViewTextBoxColumn DIACHI;
-        private CustomControls.CustomButton customButton1;
-        private CustomControls.CustomButton customButton2;
-        private CustomControls.CustomButton customButton3;
-        private CustomControls.Textbox txtTimKiem;
     }
 }

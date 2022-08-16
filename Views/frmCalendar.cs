@@ -40,5 +40,23 @@ namespace QUANLYTHUEXEOTO.Forms
         {
             LoadTheme();
         }
+
+        private void dgvLichLamViec_CellMouseMove(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            if (e.RowIndex > -1)
+            {
+                dgvLichLamViec.Rows[e.RowIndex].DefaultCellStyle.BackColor = Color.FromArgb(192, 255, 255);
+                dgvLichLamViec.Rows[e.RowIndex].DefaultCellStyle.ForeColor = Color.Black;
+            }
+        }
+
+        private void dgvLichLamViec_CellMouseLeave(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex > -1)
+            {
+                dgvLichLamViec.Rows[e.RowIndex].DefaultCellStyle.BackColor = Color.White;
+                dgvLichLamViec.Rows[e.RowIndex].DefaultCellStyle.ForeColor = Color.Black;
+            }
+        }
     }
 }

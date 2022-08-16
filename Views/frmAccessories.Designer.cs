@@ -29,7 +29,6 @@ namespace QUANLYTHUEXEOTO.Forms
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmAccessories));
             this.dgvPhuKien = new System.Windows.Forms.DataGridView();
             this.Stt = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -39,11 +38,12 @@ namespace QUANLYTHUEXEOTO.Forms
             this.lblChuDe = new System.Windows.Forms.Label();
             this.lblDonGia = new System.Windows.Forms.Label();
             this.lblTenPhuKien = new System.Windows.Forms.Label();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
             this.txtPhuKien = new QUANLYTHUEXEOTO.CustomControls.Textbox();
             this.txtDonGia = new QUANLYTHUEXEOTO.CustomControls.Textbox();
+            this.customButton5 = new QUANLYTHUEXEOTO.CustomControls.CustomButton();
+            this.customButton4 = new QUANLYTHUEXEOTO.CustomControls.CustomButton();
+            this.customButton3 = new QUANLYTHUEXEOTO.CustomControls.CustomButton();
+            this.customButton2 = new QUANLYTHUEXEOTO.CustomControls.CustomButton();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPhuKien)).BeginInit();
             this.SuspendLayout();
             // 
@@ -64,11 +64,15 @@ namespace QUANLYTHUEXEOTO.Forms
             this.dgvPhuKien.Location = new System.Drawing.Point(239, 50);
             this.dgvPhuKien.Name = "dgvPhuKien";
             this.dgvPhuKien.ReadOnly = true;
+            this.dgvPhuKien.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvPhuKien.Size = new System.Drawing.Size(383, 290);
             this.dgvPhuKien.TabIndex = 59;
+            this.dgvPhuKien.CellMouseLeave += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPhuKien_CellMouseLeave);
+            this.dgvPhuKien.CellMouseMove += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvPhuKien_CellMouseMove);
             // 
             // Stt
             // 
+            this.Stt.FillWeight = 62.40994F;
             this.Stt.HeaderText = "STT";
             this.Stt.Name = "Stt";
             this.Stt.ReadOnly = true;
@@ -82,12 +86,14 @@ namespace QUANLYTHUEXEOTO.Forms
             // 
             // TenPhuKien
             // 
+            this.TenPhuKien.FillWeight = 161.4479F;
             this.TenPhuKien.HeaderText = "Tên Phụ Kiện";
             this.TenPhuKien.Name = "TenPhuKien";
             this.TenPhuKien.ReadOnly = true;
             // 
             // DonGia
             // 
+            this.DonGia.FillWeight = 76.14214F;
             this.DonGia.HeaderText = "Đơn Giá";
             this.DonGia.Name = "DonGia";
             this.DonGia.ReadOnly = true;
@@ -132,55 +138,15 @@ namespace QUANLYTHUEXEOTO.Forms
             this.lblTenPhuKien.TabIndex = 51;
             this.lblTenPhuKien.Text = "Tên Phụ Kiện:";
             // 
-            // button3
-            // 
-            this.button3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Image = ((System.Drawing.Image)(resources.GetObject("button3.Image")));
-            this.button3.Location = new System.Drawing.Point(525, 365);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(97, 36);
-            this.button3.TabIndex = 50;
-            this.button3.Text = "Lưu";
-            this.button3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button3.UseVisualStyleBackColor = true;
-            // 
-            // button2
-            // 
-            this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
-            this.button2.Location = new System.Drawing.Point(410, 365);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(97, 36);
-            this.button2.TabIndex = 49;
-            this.button2.Text = "Xóa";
-            this.button2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button2.UseVisualStyleBackColor = true;
-            // 
-            // button1
-            // 
-            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
-            this.button1.Location = new System.Drawing.Point(292, 365);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(97, 36);
-            this.button1.TabIndex = 48;
-            this.button1.Text = "Thêm";
-            this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button1.UseVisualStyleBackColor = true;
-            // 
             // txtPhuKien
             // 
             this.txtPhuKien.BackColor = System.Drawing.SystemColors.Window;
             this.txtPhuKien.BorderColor = System.Drawing.Color.MediumSlateBlue;
-            this.txtPhuKien.BorderFocusColor = System.Drawing.Color.HotPink;
+            this.txtPhuKien.BorderFocusColor = System.Drawing.Color.Black;
             this.txtPhuKien.BorderRadius = 15;
             this.txtPhuKien.BorderSize = 2;
             this.txtPhuKien.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPhuKien.ForeColor = System.Drawing.Color.HotPink;
+            this.txtPhuKien.ForeColor = System.Drawing.Color.Black;
             this.txtPhuKien.Location = new System.Drawing.Point(7, 107);
             this.txtPhuKien.Margin = new System.Windows.Forms.Padding(4);
             this.txtPhuKien.Multiline = true;
@@ -198,11 +164,11 @@ namespace QUANLYTHUEXEOTO.Forms
             // 
             this.txtDonGia.BackColor = System.Drawing.SystemColors.Window;
             this.txtDonGia.BorderColor = System.Drawing.Color.MediumSlateBlue;
-            this.txtDonGia.BorderFocusColor = System.Drawing.Color.HotPink;
+            this.txtDonGia.BorderFocusColor = System.Drawing.Color.Black;
             this.txtDonGia.BorderRadius = 15;
             this.txtDonGia.BorderSize = 2;
             this.txtDonGia.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDonGia.ForeColor = System.Drawing.Color.HotPink;
+            this.txtDonGia.ForeColor = System.Drawing.Color.Black;
             this.txtDonGia.Location = new System.Drawing.Point(7, 176);
             this.txtDonGia.Margin = new System.Windows.Forms.Padding(4);
             this.txtDonGia.Multiline = true;
@@ -216,11 +182,91 @@ namespace QUANLYTHUEXEOTO.Forms
             this.txtDonGia.Texts = "";
             this.txtDonGia.UnderlinedStyle = false;
             // 
+            // customButton5
+            // 
+            this.customButton5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.customButton5.BackColor = System.Drawing.SystemColors.Control;
+            this.customButton5.BackgroundColor = System.Drawing.SystemColors.Control;
+            this.customButton5.BorderColor = System.Drawing.Color.MediumSlateBlue;
+            this.customButton5.BorderRadius = 20;
+            this.customButton5.BorderSize = 2;
+            this.customButton5.FlatAppearance.BorderSize = 0;
+            this.customButton5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.customButton5.ForeColor = System.Drawing.Color.Black;
+            this.customButton5.Location = new System.Drawing.Point(203, 364);
+            this.customButton5.Name = "customButton5";
+            this.customButton5.Size = new System.Drawing.Size(100, 40);
+            this.customButton5.TabIndex = 102;
+            this.customButton5.Text = "Thêm";
+            this.customButton5.TextColor = System.Drawing.Color.Black;
+            this.customButton5.UseVisualStyleBackColor = false;
+            // 
+            // customButton4
+            // 
+            this.customButton4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.customButton4.BackColor = System.Drawing.SystemColors.Control;
+            this.customButton4.BackgroundColor = System.Drawing.SystemColors.Control;
+            this.customButton4.BorderColor = System.Drawing.Color.MediumSlateBlue;
+            this.customButton4.BorderRadius = 20;
+            this.customButton4.BorderSize = 2;
+            this.customButton4.FlatAppearance.BorderSize = 0;
+            this.customButton4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.customButton4.ForeColor = System.Drawing.Color.Black;
+            this.customButton4.Location = new System.Drawing.Point(309, 364);
+            this.customButton4.Name = "customButton4";
+            this.customButton4.Size = new System.Drawing.Size(100, 40);
+            this.customButton4.TabIndex = 101;
+            this.customButton4.Text = "Xóa";
+            this.customButton4.TextColor = System.Drawing.Color.Black;
+            this.customButton4.UseVisualStyleBackColor = false;
+            // 
+            // customButton3
+            // 
+            this.customButton3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.customButton3.BackColor = System.Drawing.SystemColors.Control;
+            this.customButton3.BackgroundColor = System.Drawing.SystemColors.Control;
+            this.customButton3.BorderColor = System.Drawing.Color.MediumSlateBlue;
+            this.customButton3.BorderRadius = 20;
+            this.customButton3.BorderSize = 2;
+            this.customButton3.FlatAppearance.BorderSize = 0;
+            this.customButton3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.customButton3.ForeColor = System.Drawing.Color.Black;
+            this.customButton3.Location = new System.Drawing.Point(415, 364);
+            this.customButton3.Name = "customButton3";
+            this.customButton3.Size = new System.Drawing.Size(100, 40);
+            this.customButton3.TabIndex = 100;
+            this.customButton3.Text = "Sửa";
+            this.customButton3.TextColor = System.Drawing.Color.Black;
+            this.customButton3.UseVisualStyleBackColor = false;
+            // 
+            // customButton2
+            // 
+            this.customButton2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.customButton2.BackColor = System.Drawing.SystemColors.Control;
+            this.customButton2.BackgroundColor = System.Drawing.SystemColors.Control;
+            this.customButton2.BorderColor = System.Drawing.Color.MediumSlateBlue;
+            this.customButton2.BorderRadius = 20;
+            this.customButton2.BorderSize = 2;
+            this.customButton2.FlatAppearance.BorderSize = 0;
+            this.customButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.customButton2.ForeColor = System.Drawing.Color.Black;
+            this.customButton2.Location = new System.Drawing.Point(521, 364);
+            this.customButton2.Name = "customButton2";
+            this.customButton2.Size = new System.Drawing.Size(100, 40);
+            this.customButton2.TabIndex = 99;
+            this.customButton2.Text = "Hủy";
+            this.customButton2.TextColor = System.Drawing.Color.Black;
+            this.customButton2.UseVisualStyleBackColor = false;
+            // 
             // frmAccessories
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(644, 416);
+            this.Controls.Add(this.customButton5);
+            this.Controls.Add(this.customButton4);
+            this.Controls.Add(this.customButton3);
+            this.Controls.Add(this.customButton2);
             this.Controls.Add(this.txtDonGia);
             this.Controls.Add(this.txtPhuKien);
             this.Controls.Add(this.dgvPhuKien);
@@ -228,9 +274,6 @@ namespace QUANLYTHUEXEOTO.Forms
             this.Controls.Add(this.lblChuDe);
             this.Controls.Add(this.lblDonGia);
             this.Controls.Add(this.lblTenPhuKien);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
             this.Name = "frmAccessories";
             this.Text = "Quản Lý Phụ Kiện";
             this.Load += new System.EventHandler(this.frmAccessories_Load);
@@ -247,14 +290,15 @@ namespace QUANLYTHUEXEOTO.Forms
         private System.Windows.Forms.Label lblChuDe;
         private System.Windows.Forms.Label lblDonGia;
         private System.Windows.Forms.Label lblTenPhuKien;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
+        private CustomControls.Textbox txtPhuKien;
+        private CustomControls.Textbox txtDonGia;
         private System.Windows.Forms.DataGridViewTextBoxColumn Stt;
         private System.Windows.Forms.DataGridViewTextBoxColumn id;
         private System.Windows.Forms.DataGridViewTextBoxColumn TenPhuKien;
         private System.Windows.Forms.DataGridViewTextBoxColumn DonGia;
-        private CustomControls.Textbox txtPhuKien;
-        private CustomControls.Textbox txtDonGia;
+        private CustomControls.CustomButton customButton5;
+        private CustomControls.CustomButton customButton4;
+        private CustomControls.CustomButton customButton3;
+        private CustomControls.CustomButton customButton2;
     }
 }

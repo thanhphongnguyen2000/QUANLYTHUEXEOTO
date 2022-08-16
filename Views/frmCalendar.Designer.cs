@@ -37,17 +37,18 @@ namespace QUANLYTHUEXEOTO.Forms
             this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lblXemLai = new System.Windows.Forms.Label();
             this.lblChuDe = new System.Windows.Forms.Label();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
             this.lblTenNV = new System.Windows.Forms.Label();
             this.lblCaLamViec = new System.Windows.Forms.Label();
             this.lblNgayLamViec = new System.Windows.Forms.Label();
-            this.button5 = new System.Windows.Forms.Button();
-            this.customDatePicker1 = new QUANLYTHUEXEOTO.CustomControls.CustomDatePicker();
             this.cbbTenNV = new QUANLYTHUEXEOTO.CustomControls.CustomCombobox();
             this.cbbCa = new QUANLYTHUEXEOTO.CustomControls.CustomCombobox();
             this.txtXemDanhSach = new QUANLYTHUEXEOTO.CustomControls.Textbox();
+            this.customButton5 = new QUANLYTHUEXEOTO.CustomControls.CustomButton();
+            this.customButton4 = new QUANLYTHUEXEOTO.CustomControls.CustomButton();
+            this.customButton3 = new QUANLYTHUEXEOTO.CustomControls.CustomButton();
+            this.customButton2 = new QUANLYTHUEXEOTO.CustomControls.CustomButton();
+            this.customDatePicker1 = new QUANLYTHUEXEOTO.CustomControls.CustomDatePicker();
+            this.customButton1 = new QUANLYTHUEXEOTO.CustomControls.CustomButton();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLichLamViec)).BeginInit();
             this.SuspendLayout();
             // 
@@ -68,26 +69,33 @@ namespace QUANLYTHUEXEOTO.Forms
             this.id});
             this.dgvLichLamViec.Location = new System.Drawing.Point(239, 50);
             this.dgvLichLamViec.Name = "dgvLichLamViec";
+            this.dgvLichLamViec.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvLichLamViec.Size = new System.Drawing.Size(383, 290);
             this.dgvLichLamViec.TabIndex = 71;
+            this.dgvLichLamViec.CellMouseLeave += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvLichLamViec_CellMouseLeave);
+            this.dgvLichLamViec.CellMouseMove += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvLichLamViec_CellMouseMove);
             // 
             // stt
             // 
+            this.stt.FillWeight = 31.57232F;
             this.stt.HeaderText = "STT";
             this.stt.Name = "stt";
             // 
             // HOTENNV
             // 
+            this.HOTENNV.FillWeight = 181.5043F;
             this.HOTENNV.HeaderText = "Họ Tên Nhân Viên";
             this.HOTENNV.Name = "HOTENNV";
             // 
             // CALAMVIEC
             // 
+            this.CALAMVIEC.FillWeight = 85.40057F;
             this.CALAMVIEC.HeaderText = "Ca Làm Việc";
             this.CALAMVIEC.Name = "CALAMVIEC";
             // 
             // NGAYLAM
             // 
+            this.NGAYLAM.FillWeight = 101.5229F;
             this.NGAYLAM.HeaderText = "Ngày Làm Việc";
             this.NGAYLAM.Name = "NGAYLAM";
             // 
@@ -116,40 +124,6 @@ namespace QUANLYTHUEXEOTO.Forms
             this.lblChuDe.Size = new System.Drawing.Size(215, 20);
             this.lblChuDe.TabIndex = 69;
             this.lblChuDe.Text = "Danh Sách Lịch Làm Việc";
-            // 
-            // button3
-            // 
-            this.button3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Location = new System.Drawing.Point(525, 365);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(97, 36);
-            this.button3.TabIndex = 62;
-            this.button3.Text = "Sửa";
-            this.button3.UseVisualStyleBackColor = true;
-            // 
-            // button2
-            // 
-            this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Location = new System.Drawing.Point(410, 365);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(97, 36);
-            this.button2.TabIndex = 61;
-            this.button2.Text = "Xóa";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
-            // button1
-            // 
-            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Location = new System.Drawing.Point(292, 365);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(97, 36);
-            this.button1.TabIndex = 60;
-            this.button1.Text = "Thêm";
-            this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button1.UseVisualStyleBackColor = true;
             // 
             // lblTenNV
             // 
@@ -180,29 +154,6 @@ namespace QUANLYTHUEXEOTO.Forms
             this.lblNgayLamViec.Size = new System.Drawing.Size(96, 13);
             this.lblNgayLamViec.TabIndex = 79;
             this.lblNgayLamViec.Text = "Ngày Làm Việc:";
-            // 
-            // button5
-            // 
-            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button5.Location = new System.Drawing.Point(63, 111);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(97, 36);
-            this.button5.TabIndex = 80;
-            this.button5.Text = "Xem Lại";
-            this.button5.UseVisualStyleBackColor = true;
-            // 
-            // customDatePicker1
-            // 
-            this.customDatePicker1.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.customDatePicker1.BorderSize = 0;
-            this.customDatePicker1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F);
-            this.customDatePicker1.Location = new System.Drawing.Point(7, 314);
-            this.customDatePicker1.MinimumSize = new System.Drawing.Size(4, 25);
-            this.customDatePicker1.Name = "customDatePicker1";
-            this.customDatePicker1.Size = new System.Drawing.Size(225, 25);
-            this.customDatePicker1.SkinColor = System.Drawing.Color.MediumSlateBlue;
-            this.customDatePicker1.TabIndex = 82;
-            this.customDatePicker1.TextColor = System.Drawing.Color.White;
             // 
             // cbbTenNV
             // 
@@ -246,11 +197,11 @@ namespace QUANLYTHUEXEOTO.Forms
             // 
             this.txtXemDanhSach.BackColor = System.Drawing.SystemColors.Window;
             this.txtXemDanhSach.BorderColor = System.Drawing.Color.MediumSlateBlue;
-            this.txtXemDanhSach.BorderFocusColor = System.Drawing.Color.HotPink;
+            this.txtXemDanhSach.BorderFocusColor = System.Drawing.Color.Black;
             this.txtXemDanhSach.BorderRadius = 15;
             this.txtXemDanhSach.BorderSize = 2;
             this.txtXemDanhSach.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtXemDanhSach.ForeColor = System.Drawing.Color.HotPink;
+            this.txtXemDanhSach.ForeColor = System.Drawing.Color.Black;
             this.txtXemDanhSach.Location = new System.Drawing.Point(7, 74);
             this.txtXemDanhSach.Margin = new System.Windows.Forms.Padding(4);
             this.txtXemDanhSach.Multiline = true;
@@ -264,25 +215,134 @@ namespace QUANLYTHUEXEOTO.Forms
             this.txtXemDanhSach.Texts = "";
             this.txtXemDanhSach.UnderlinedStyle = false;
             // 
+            // customButton5
+            // 
+            this.customButton5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.customButton5.BackColor = System.Drawing.SystemColors.Control;
+            this.customButton5.BackgroundColor = System.Drawing.SystemColors.Control;
+            this.customButton5.BorderColor = System.Drawing.Color.MediumSlateBlue;
+            this.customButton5.BorderRadius = 20;
+            this.customButton5.BorderSize = 2;
+            this.customButton5.FlatAppearance.BorderSize = 0;
+            this.customButton5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.customButton5.ForeColor = System.Drawing.Color.Black;
+            this.customButton5.Location = new System.Drawing.Point(202, 364);
+            this.customButton5.Name = "customButton5";
+            this.customButton5.Size = new System.Drawing.Size(100, 40);
+            this.customButton5.TabIndex = 98;
+            this.customButton5.Text = "Thêm";
+            this.customButton5.TextColor = System.Drawing.Color.Black;
+            this.customButton5.UseVisualStyleBackColor = false;
+            // 
+            // customButton4
+            // 
+            this.customButton4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.customButton4.BackColor = System.Drawing.SystemColors.Control;
+            this.customButton4.BackgroundColor = System.Drawing.SystemColors.Control;
+            this.customButton4.BorderColor = System.Drawing.Color.MediumSlateBlue;
+            this.customButton4.BorderRadius = 20;
+            this.customButton4.BorderSize = 2;
+            this.customButton4.FlatAppearance.BorderSize = 0;
+            this.customButton4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.customButton4.ForeColor = System.Drawing.Color.Black;
+            this.customButton4.Location = new System.Drawing.Point(308, 364);
+            this.customButton4.Name = "customButton4";
+            this.customButton4.Size = new System.Drawing.Size(100, 40);
+            this.customButton4.TabIndex = 97;
+            this.customButton4.Text = "Xóa";
+            this.customButton4.TextColor = System.Drawing.Color.Black;
+            this.customButton4.UseVisualStyleBackColor = false;
+            // 
+            // customButton3
+            // 
+            this.customButton3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.customButton3.BackColor = System.Drawing.SystemColors.Control;
+            this.customButton3.BackgroundColor = System.Drawing.SystemColors.Control;
+            this.customButton3.BorderColor = System.Drawing.Color.MediumSlateBlue;
+            this.customButton3.BorderRadius = 20;
+            this.customButton3.BorderSize = 2;
+            this.customButton3.FlatAppearance.BorderSize = 0;
+            this.customButton3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.customButton3.ForeColor = System.Drawing.Color.Black;
+            this.customButton3.Location = new System.Drawing.Point(414, 364);
+            this.customButton3.Name = "customButton3";
+            this.customButton3.Size = new System.Drawing.Size(100, 40);
+            this.customButton3.TabIndex = 96;
+            this.customButton3.Text = "Sửa";
+            this.customButton3.TextColor = System.Drawing.Color.Black;
+            this.customButton3.UseVisualStyleBackColor = false;
+            // 
+            // customButton2
+            // 
+            this.customButton2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.customButton2.BackColor = System.Drawing.SystemColors.Control;
+            this.customButton2.BackgroundColor = System.Drawing.SystemColors.Control;
+            this.customButton2.BorderColor = System.Drawing.Color.MediumSlateBlue;
+            this.customButton2.BorderRadius = 20;
+            this.customButton2.BorderSize = 2;
+            this.customButton2.FlatAppearance.BorderSize = 0;
+            this.customButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.customButton2.ForeColor = System.Drawing.Color.Black;
+            this.customButton2.Location = new System.Drawing.Point(522, 364);
+            this.customButton2.Name = "customButton2";
+            this.customButton2.Size = new System.Drawing.Size(100, 40);
+            this.customButton2.TabIndex = 95;
+            this.customButton2.Text = "Hủy";
+            this.customButton2.TextColor = System.Drawing.Color.Black;
+            this.customButton2.UseVisualStyleBackColor = false;
+            // 
+            // customDatePicker1
+            // 
+            this.customDatePicker1.BorderColor = System.Drawing.Color.MediumSlateBlue;
+            this.customDatePicker1.BorderSize = 2;
+            this.customDatePicker1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F);
+            this.customDatePicker1.Location = new System.Drawing.Point(7, 315);
+            this.customDatePicker1.MinimumSize = new System.Drawing.Size(4, 25);
+            this.customDatePicker1.Name = "customDatePicker1";
+            this.customDatePicker1.Size = new System.Drawing.Size(225, 25);
+            this.customDatePicker1.SkinColor = System.Drawing.Color.White;
+            this.customDatePicker1.TabIndex = 99;
+            this.customDatePicker1.TextColor = System.Drawing.Color.Black;
+            // 
+            // customButton1
+            // 
+            this.customButton1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.customButton1.BackColor = System.Drawing.SystemColors.Control;
+            this.customButton1.BackgroundColor = System.Drawing.SystemColors.Control;
+            this.customButton1.BorderColor = System.Drawing.Color.MediumSlateBlue;
+            this.customButton1.BorderRadius = 20;
+            this.customButton1.BorderSize = 2;
+            this.customButton1.FlatAppearance.BorderSize = 0;
+            this.customButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.customButton1.ForeColor = System.Drawing.Color.Black;
+            this.customButton1.Location = new System.Drawing.Point(69, 111);
+            this.customButton1.Name = "customButton1";
+            this.customButton1.Size = new System.Drawing.Size(100, 40);
+            this.customButton1.TabIndex = 100;
+            this.customButton1.Text = "Xem Lại";
+            this.customButton1.TextColor = System.Drawing.Color.Black;
+            this.customButton1.UseVisualStyleBackColor = false;
+            // 
             // frmCalendar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(644, 416);
+            this.Controls.Add(this.customButton1);
+            this.Controls.Add(this.customDatePicker1);
+            this.Controls.Add(this.customButton5);
+            this.Controls.Add(this.customButton4);
+            this.Controls.Add(this.customButton3);
+            this.Controls.Add(this.customButton2);
             this.Controls.Add(this.txtXemDanhSach);
             this.Controls.Add(this.cbbCa);
             this.Controls.Add(this.cbbTenNV);
-            this.Controls.Add(this.customDatePicker1);
-            this.Controls.Add(this.button5);
             this.Controls.Add(this.lblNgayLamViec);
             this.Controls.Add(this.lblCaLamViec);
             this.Controls.Add(this.lblTenNV);
             this.Controls.Add(this.dgvLichLamViec);
             this.Controls.Add(this.lblXemLai);
             this.Controls.Add(this.lblChuDe);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
             this.Name = "frmCalendar";
             this.Text = "Quản Lý Lịch Làm Việc";
             this.Load += new System.EventHandler(this.frmCalendar_Load);
@@ -297,21 +357,22 @@ namespace QUANLYTHUEXEOTO.Forms
         private System.Windows.Forms.DataGridView dgvLichLamViec;
         private System.Windows.Forms.Label lblXemLai;
         private System.Windows.Forms.Label lblChuDe;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label lblTenNV;
         private System.Windows.Forms.Label lblCaLamViec;
         private System.Windows.Forms.Label lblNgayLamViec;
-        private System.Windows.Forms.Button button5;
+        private CustomControls.CustomCombobox cbbTenNV;
+        private CustomControls.CustomCombobox cbbCa;
+        private CustomControls.Textbox txtXemDanhSach;
         private System.Windows.Forms.DataGridViewTextBoxColumn stt;
         private System.Windows.Forms.DataGridViewTextBoxColumn HOTENNV;
         private System.Windows.Forms.DataGridViewTextBoxColumn CALAMVIEC;
         private System.Windows.Forms.DataGridViewTextBoxColumn NGAYLAM;
         private System.Windows.Forms.DataGridViewTextBoxColumn id;
+        private CustomControls.CustomButton customButton5;
+        private CustomControls.CustomButton customButton4;
+        private CustomControls.CustomButton customButton3;
+        private CustomControls.CustomButton customButton2;
         private CustomControls.CustomDatePicker customDatePicker1;
-        private CustomControls.CustomCombobox cbbTenNV;
-        private CustomControls.CustomCombobox cbbCa;
-        private CustomControls.Textbox txtXemDanhSach;
+        private CustomControls.CustomButton customButton1;
     }
 }

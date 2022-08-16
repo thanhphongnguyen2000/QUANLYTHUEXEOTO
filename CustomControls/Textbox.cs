@@ -27,7 +27,6 @@ namespace QUANLYTHUEXEOTO.CustomControls
         private string placeholderText = "";
         private bool isPlaceholder = false;
         private bool isPasswordChar = false;
-        internal bool UseSystemPasswordChar;
 
         //Events
         public event EventHandler _TextChanged;

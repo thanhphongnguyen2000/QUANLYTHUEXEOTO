@@ -32,11 +32,13 @@ namespace QUANLYTHUEXEOTO
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.txtPassword = new QUANLYTHUEXEOTO.CustomControls.Textbox();
+            this.btnDangNhap = new QUANLYTHUEXEOTO.CustomControls.CustomButton();
+            this.txtUserName = new QUANLYTHUEXEOTO.CustomControls.Textbox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.btnDangKy = new QUANLYTHUEXEOTO.CustomControls.CustomButton();
             this.btnClose = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.txtPassword = new QUANLYTHUEXEOTO.CustomControls.Textbox();
-            this.txtUserName = new QUANLYTHUEXEOTO.CustomControls.Textbox();
-            this.btnDangNhap = new QUANLYTHUEXEOTO.CustomControls.CustomButton();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -65,11 +67,110 @@ namespace QUANLYTHUEXEOTO
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(428, 188);
+            this.label3.Location = new System.Drawing.Point(427, 186);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(72, 16);
             this.label3.TabIndex = 3;
             this.label3.Text = "Password:";
+            // 
+            // txtPassword
+            // 
+            this.txtPassword.BackColor = System.Drawing.SystemColors.Window;
+            this.txtPassword.BorderColor = System.Drawing.Color.Red;
+            this.txtPassword.BorderFocusColor = System.Drawing.Color.Black;
+            this.txtPassword.BorderRadius = 15;
+            this.txtPassword.BorderSize = 2;
+            this.txtPassword.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPassword.ForeColor = System.Drawing.Color.Black;
+            this.txtPassword.Location = new System.Drawing.Point(425, 206);
+            this.txtPassword.Margin = new System.Windows.Forms.Padding(4);
+            this.txtPassword.Multiline = true;
+            this.txtPassword.Name = "txtPassword";
+            this.txtPassword.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
+            this.txtPassword.PasswordChar = true;
+            this.txtPassword.PlaceholderColor = System.Drawing.Color.DarkGray;
+            this.txtPassword.PlaceholderText = "Password";
+            this.txtPassword.Size = new System.Drawing.Size(250, 30);
+            this.txtPassword.TabIndex = 24;
+            this.txtPassword.Texts = "";
+            this.txtPassword.UnderlinedStyle = false;
+            // 
+            // btnDangNhap
+            // 
+            this.btnDangNhap.BackColor = System.Drawing.SystemColors.Control;
+            this.btnDangNhap.BackgroundColor = System.Drawing.SystemColors.Control;
+            this.btnDangNhap.BorderColor = System.Drawing.Color.Red;
+            this.btnDangNhap.BorderRadius = 20;
+            this.btnDangNhap.BorderSize = 2;
+            this.btnDangNhap.FlatAppearance.BorderSize = 0;
+            this.btnDangNhap.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.btnDangNhap.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.btnDangNhap.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDangNhap.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDangNhap.ForeColor = System.Drawing.Color.Black;
+            this.btnDangNhap.Location = new System.Drawing.Point(470, 257);
+            this.btnDangNhap.Name = "btnDangNhap";
+            this.btnDangNhap.Size = new System.Drawing.Size(150, 40);
+            this.btnDangNhap.TabIndex = 23;
+            this.btnDangNhap.Text = "Đăng Nhập";
+            this.btnDangNhap.TextColor = System.Drawing.Color.Black;
+            this.btnDangNhap.UseVisualStyleBackColor = false;
+            this.btnDangNhap.Click += new System.EventHandler(this.btnDangNhap_Click);
+            // 
+            // txtUserName
+            // 
+            this.txtUserName.BackColor = System.Drawing.SystemColors.Window;
+            this.txtUserName.BorderColor = System.Drawing.Color.Red;
+            this.txtUserName.BorderFocusColor = System.Drawing.Color.Black;
+            this.txtUserName.BorderRadius = 15;
+            this.txtUserName.BorderSize = 2;
+            this.txtUserName.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtUserName.ForeColor = System.Drawing.Color.Black;
+            this.txtUserName.Location = new System.Drawing.Point(425, 135);
+            this.txtUserName.Margin = new System.Windows.Forms.Padding(4);
+            this.txtUserName.Multiline = true;
+            this.txtUserName.Name = "txtUserName";
+            this.txtUserName.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
+            this.txtUserName.PasswordChar = false;
+            this.txtUserName.PlaceholderColor = System.Drawing.Color.DarkGray;
+            this.txtUserName.PlaceholderText = "UserName";
+            this.txtUserName.Size = new System.Drawing.Size(250, 30);
+            this.txtUserName.TabIndex = 21;
+            this.txtUserName.Texts = "";
+            this.txtUserName.UnderlinedStyle = false;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.Red;
+            this.label4.Location = new System.Drawing.Point(478, 309);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(137, 17);
+            this.label4.TabIndex = 25;
+            this.label4.Text = "Chưa có tài khoản?";
+            // 
+            // btnDangKy
+            // 
+            this.btnDangKy.BackColor = System.Drawing.SystemColors.Control;
+            this.btnDangKy.BackgroundColor = System.Drawing.SystemColors.Control;
+            this.btnDangKy.BorderColor = System.Drawing.Color.Red;
+            this.btnDangKy.BorderRadius = 20;
+            this.btnDangKy.BorderSize = 2;
+            this.btnDangKy.FlatAppearance.BorderSize = 0;
+            this.btnDangKy.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.btnDangKy.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.btnDangKy.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDangKy.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDangKy.ForeColor = System.Drawing.Color.Black;
+            this.btnDangKy.Location = new System.Drawing.Point(470, 333);
+            this.btnDangKy.Name = "btnDangKy";
+            this.btnDangKy.Size = new System.Drawing.Size(150, 40);
+            this.btnDangKy.TabIndex = 26;
+            this.btnDangKy.Text = "Đăng Ký";
+            this.btnDangKy.TextColor = System.Drawing.Color.Black;
+            this.btnDangKy.UseVisualStyleBackColor = false;
+            this.btnDangKy.Click += new System.EventHandler(this.btnDangKy_Click);
             // 
             // btnClose
             // 
@@ -95,80 +196,16 @@ namespace QUANLYTHUEXEOTO
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
-            // txtPassword
-            // 
-            this.txtPassword.BackColor = System.Drawing.SystemColors.Window;
-            this.txtPassword.BorderColor = System.Drawing.Color.Red;
-            this.txtPassword.BorderFocusColor = System.Drawing.Color.HotPink;
-            this.txtPassword.BorderRadius = 15;
-            this.txtPassword.BorderSize = 2;
-            this.txtPassword.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPassword.ForeColor = System.Drawing.Color.HotPink;
-            this.txtPassword.Location = new System.Drawing.Point(425, 208);
-            this.txtPassword.Margin = new System.Windows.Forms.Padding(4);
-            this.txtPassword.Multiline = true;
-            this.txtPassword.Name = "txtPassword";
-            this.txtPassword.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
-            this.txtPassword.PasswordChar = true;
-            this.txtPassword.PlaceholderColor = System.Drawing.Color.DarkGray;
-            this.txtPassword.PlaceholderText = "Password";
-            this.txtPassword.Size = new System.Drawing.Size(250, 30);
-            this.txtPassword.TabIndex = 22;
-            this.txtPassword.Texts = "";
-            this.txtPassword.UnderlinedStyle = false;
-            // 
-            // txtUserName
-            // 
-            this.txtUserName.BackColor = System.Drawing.SystemColors.Window;
-            this.txtUserName.BorderColor = System.Drawing.Color.Red;
-            this.txtUserName.BorderFocusColor = System.Drawing.Color.HotPink;
-            this.txtUserName.BorderRadius = 15;
-            this.txtUserName.BorderSize = 2;
-            this.txtUserName.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtUserName.ForeColor = System.Drawing.Color.HotPink;
-            this.txtUserName.Location = new System.Drawing.Point(425, 135);
-            this.txtUserName.Margin = new System.Windows.Forms.Padding(4);
-            this.txtUserName.Multiline = true;
-            this.txtUserName.Name = "txtUserName";
-            this.txtUserName.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
-            this.txtUserName.PasswordChar = false;
-            this.txtUserName.PlaceholderColor = System.Drawing.Color.DarkGray;
-            this.txtUserName.PlaceholderText = "UserName";
-            this.txtUserName.Size = new System.Drawing.Size(250, 30);
-            this.txtUserName.TabIndex = 21;
-            this.txtUserName.Texts = "";
-            this.txtUserName.UnderlinedStyle = false;
-            // 
-            // btnDangNhap
-            // 
-            this.btnDangNhap.BackColor = System.Drawing.SystemColors.Control;
-            this.btnDangNhap.BackgroundColor = System.Drawing.SystemColors.Control;
-            this.btnDangNhap.BorderColor = System.Drawing.Color.Red;
-            this.btnDangNhap.BorderRadius = 20;
-            this.btnDangNhap.BorderSize = 2;
-            this.btnDangNhap.FlatAppearance.BorderSize = 0;
-            this.btnDangNhap.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.btnDangNhap.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.btnDangNhap.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDangNhap.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDangNhap.ForeColor = System.Drawing.Color.White;
-            this.btnDangNhap.Location = new System.Drawing.Point(470, 277);
-            this.btnDangNhap.Name = "btnDangNhap";
-            this.btnDangNhap.Size = new System.Drawing.Size(150, 40);
-            this.btnDangNhap.TabIndex = 23;
-            this.btnDangNhap.Text = "Đăng Nhập";
-            this.btnDangNhap.TextColor = System.Drawing.Color.White;
-            this.btnDangNhap.UseVisualStyleBackColor = false;
-            this.btnDangNhap.Click += new System.EventHandler(this.btnDangNhap_Click);
-            // 
             // frmDangNhap
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(691, 420);
-            this.Controls.Add(this.btnDangNhap);
+            this.ClientSize = new System.Drawing.Size(690, 420);
+            this.Controls.Add(this.btnDangKy);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.txtPassword);
+            this.Controls.Add(this.btnDangNhap);
             this.Controls.Add(this.txtUserName);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.label3);
@@ -193,8 +230,10 @@ namespace QUANLYTHUEXEOTO
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btnClose;
         private CustomControls.Textbox txtUserName;
-        private CustomControls.Textbox txtPassword;
         private CustomControls.CustomButton btnDangNhap;
+        private CustomControls.Textbox txtPassword;
+        private System.Windows.Forms.Label label4;
+        private CustomControls.CustomButton btnDangKy;
     }
 }
 
