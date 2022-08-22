@@ -8,13 +8,29 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+using DAL;
+using DAL.DTO;
+using BUS;
+
 namespace QUANLYTHUEXEOTO.Forms
 {
     public partial class frmOrderDetails : Form
     {
+        List<tb_CT_PhieuThue> lsvCTPT;
         public frmOrderDetails()
         {
             InitializeComponent();
+        }
+
+        public frmOrderDetails(PhieuThue_Custom ptct) : this()
+        {
+            lblKhachHang.Text = ptct.TenKH;
+            lblNgayLapHD.Text = ptct.NgayLapPhieu.ToString();
+            lblTenNV.Text = ptct.TenNV;
+            lblTitle.Text += ptct.MaPT.ToString();
+            lsvCTPT = new List<tb_CT_PhieuThue>();
+            lsvCTPT = CT_PhieuThueBUS.GetInstance().getCTPhieuThueTheoMaPT(ptct.MaPT);
+            dgvCT_PhieuThue.DataSource = lsvCTPT;
         }
 
         private void LoadTheme()
@@ -29,13 +45,17 @@ namespace QUANLYTHUEXEOTO.Forms
                     btn.FlatAppearance.BorderColor = ThemeColor.SecondaryColor;
                 }
             }
-            label4.ForeColor = ThemeColor.SecondaryColor;
-            label5.ForeColor = ThemeColor.PrimaryColor;
+            lblTitle.ForeColor = ThemeColor.SecondaryColor;
         }
 
         private void frmOrderDetails_Load(object sender, EventArgs e)
         {
             LoadTheme();
+        }
+
+        private void btnThoat_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

@@ -32,13 +32,11 @@ namespace QUANLYTHUEXEOTO
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.btnClose = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.txtPassword = new QUANLYTHUEXEOTO.CustomControls.Textbox();
             this.btnDangNhap = new QUANLYTHUEXEOTO.CustomControls.CustomButton();
             this.txtUserName = new QUANLYTHUEXEOTO.CustomControls.Textbox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.btnDangKy = new QUANLYTHUEXEOTO.CustomControls.CustomButton();
-            this.btnClose = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -73,6 +71,30 @@ namespace QUANLYTHUEXEOTO
             this.label3.TabIndex = 3;
             this.label3.Text = "Password:";
             // 
+            // btnClose
+            // 
+            this.btnClose.BackgroundImage = global::QUANLYTHUEXEOTO.Properties.Resources.icon_close;
+            this.btnClose.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnClose.FlatAppearance.BorderSize = 0;
+            this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnClose.Location = new System.Drawing.Point(654, 0);
+            this.btnClose.Margin = new System.Windows.Forms.Padding(2);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(37, 33);
+            this.btnClose.TabIndex = 20;
+            this.btnClose.UseVisualStyleBackColor = true;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::QUANLYTHUEXEOTO.Properties.Resources.bglogin;
+            this.pictureBox1.Location = new System.Drawing.Point(-1, -2);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(543, 426);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
+            // 
             // txtPassword
             // 
             this.txtPassword.BackColor = System.Drawing.SystemColors.Window;
@@ -91,7 +113,7 @@ namespace QUANLYTHUEXEOTO
             this.txtPassword.PlaceholderColor = System.Drawing.Color.DarkGray;
             this.txtPassword.PlaceholderText = "Password";
             this.txtPassword.Size = new System.Drawing.Size(250, 30);
-            this.txtPassword.TabIndex = 24;
+            this.txtPassword.TabIndex = 23;
             this.txtPassword.Texts = "";
             this.txtPassword.UnderlinedStyle = false;
             // 
@@ -108,10 +130,10 @@ namespace QUANLYTHUEXEOTO
             this.btnDangNhap.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDangNhap.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDangNhap.ForeColor = System.Drawing.Color.Black;
-            this.btnDangNhap.Location = new System.Drawing.Point(470, 257);
+            this.btnDangNhap.Location = new System.Drawing.Point(470, 271);
             this.btnDangNhap.Name = "btnDangNhap";
             this.btnDangNhap.Size = new System.Drawing.Size(150, 40);
-            this.btnDangNhap.TabIndex = 23;
+            this.btnDangNhap.TabIndex = 24;
             this.btnDangNhap.Text = "Đăng Nhập";
             this.btnDangNhap.TextColor = System.Drawing.Color.Black;
             this.btnDangNhap.UseVisualStyleBackColor = false;
@@ -139,71 +161,12 @@ namespace QUANLYTHUEXEOTO
             this.txtUserName.Texts = "";
             this.txtUserName.UnderlinedStyle = false;
             // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.Red;
-            this.label4.Location = new System.Drawing.Point(478, 309);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(137, 17);
-            this.label4.TabIndex = 25;
-            this.label4.Text = "Chưa có tài khoản?";
-            // 
-            // btnDangKy
-            // 
-            this.btnDangKy.BackColor = System.Drawing.SystemColors.Control;
-            this.btnDangKy.BackgroundColor = System.Drawing.SystemColors.Control;
-            this.btnDangKy.BorderColor = System.Drawing.Color.Red;
-            this.btnDangKy.BorderRadius = 20;
-            this.btnDangKy.BorderSize = 2;
-            this.btnDangKy.FlatAppearance.BorderSize = 0;
-            this.btnDangKy.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.btnDangKy.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.btnDangKy.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDangKy.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDangKy.ForeColor = System.Drawing.Color.Black;
-            this.btnDangKy.Location = new System.Drawing.Point(470, 333);
-            this.btnDangKy.Name = "btnDangKy";
-            this.btnDangKy.Size = new System.Drawing.Size(150, 40);
-            this.btnDangKy.TabIndex = 26;
-            this.btnDangKy.Text = "Đăng Ký";
-            this.btnDangKy.TextColor = System.Drawing.Color.Black;
-            this.btnDangKy.UseVisualStyleBackColor = false;
-            this.btnDangKy.Click += new System.EventHandler(this.btnDangKy_Click);
-            // 
-            // btnClose
-            // 
-            this.btnClose.BackgroundImage = global::QUANLYTHUEXEOTO.Properties.Resources.icon_close;
-            this.btnClose.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnClose.FlatAppearance.BorderSize = 0;
-            this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnClose.Location = new System.Drawing.Point(654, 0);
-            this.btnClose.Margin = new System.Windows.Forms.Padding(2);
-            this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(37, 33);
-            this.btnClose.TabIndex = 20;
-            this.btnClose.UseVisualStyleBackColor = true;
-            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::QUANLYTHUEXEOTO.Properties.Resources.bglogin;
-            this.pictureBox1.Location = new System.Drawing.Point(-1, -2);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(543, 426);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
-            // 
             // frmDangNhap
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(690, 420);
-            this.Controls.Add(this.btnDangKy);
-            this.Controls.Add(this.label4);
             this.Controls.Add(this.txtPassword);
             this.Controls.Add(this.btnDangNhap);
             this.Controls.Add(this.txtUserName);
@@ -232,8 +195,6 @@ namespace QUANLYTHUEXEOTO
         private CustomControls.Textbox txtUserName;
         private CustomControls.CustomButton btnDangNhap;
         private CustomControls.Textbox txtPassword;
-        private System.Windows.Forms.Label label4;
-        private CustomControls.CustomButton btnDangKy;
     }
 }
 

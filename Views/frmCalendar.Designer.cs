@@ -306,7 +306,6 @@ namespace QUANLYTHUEXEOTO.Forms
             // 
             // customButton1
             // 
-            this.customButton1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.customButton1.BackColor = System.Drawing.SystemColors.Control;
             this.customButton1.BackgroundColor = System.Drawing.SystemColors.Control;
             this.customButton1.BorderColor = System.Drawing.Color.MediumSlateBlue;

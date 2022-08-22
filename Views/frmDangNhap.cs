@@ -8,6 +8,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+using BUS;
+using DAL;
+
 namespace QUANLYTHUEXEOTO
 {
     public partial class frmDangNhap : Form
@@ -24,26 +27,35 @@ namespace QUANLYTHUEXEOTO
 
         private void btnDangNhap_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            frmMain frm = new frmMain();
-            frm.Show();
-        }
-
-        private void btnDangKy_Click(object sender, EventArgs e)
-        {
-            DialogResult dr;
-            dr = MessageBox.Show("Bạn cần đăng ký thành viên trước để đăng kí tài khoản!", "Thông Tin!", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
-            if (dr == DialogResult.Yes)
+            
+            if (string.IsNullOrEmpty(txtUserName.Texts))
             {
+                MessageBox.Show("Vui lòng nhập tài khoản!", "Chú ý!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txtUserName.Focus();
+                return;
+            }
+            if (string.IsNullOrEmpty(txtPassword.Texts))
+            {
+                MessageBox.Show("Vui lòng nhập mật khẩu!", "Chú ý!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txtPassword.Focus();
+                return;
+            }
+            string username = txtUserName.Texts;
+            string password = txtPassword.Texts;
+            tb_TaiKhoan taiKhoan = TaiKhoanBUS.GetInstance().KiemTraTK(username, password);
+            if (taiKhoan != null)
+            {
+                MessageBox.Show("Đăng nhập thành công!", "Susscess!", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 this.Hide();
-                frmMember frm = new frmMember();
+                frmMain frm = new frmMain();
                 frm.Show();
             }
             else
             {
-                Application.Exit();
+                MessageBox.Show("Sai tài khoản hoặc mật khẩu!", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txtUserName.Texts = txtPassword.Texts = "";
+                txtUserName.Focus();
             }
-            
         }
     }
 }
