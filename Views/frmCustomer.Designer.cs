@@ -30,24 +30,37 @@ namespace QUANLYTHUEXEOTO.Forms
         private void InitializeComponent()
         {
             this.dgvKhachHang = new System.Windows.Forms.DataGridView();
-            this.stt = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.HOTENKH = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DIENTHOAI = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CMND = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DIACHI = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.lblInfo = new System.Windows.Forms.Label();
+            this.MaKH = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TenKH = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CCCD = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SDT = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.GioiTinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DiaChi = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lblChuDe = new System.Windows.Forms.Label();
-            this.lblTimKiem = new System.Windows.Forms.Label();
-            this.lblLocKH = new System.Windows.Forms.Label();
-            this.lblTuNgay = new System.Windows.Forms.Label();
-            this.lblDenNgay = new System.Windows.Forms.Label();
-            this.customDatePicker1 = new QUANLYTHUEXEOTO.CustomControls.CustomDatePicker();
-            this.customDatePicker2 = new QUANLYTHUEXEOTO.CustomControls.CustomDatePicker();
-            this.customButton1 = new QUANLYTHUEXEOTO.CustomControls.CustomButton();
-            this.customButton2 = new QUANLYTHUEXEOTO.CustomControls.CustomButton();
-            this.customButton3 = new QUANLYTHUEXEOTO.CustomControls.CustomButton();
-            this.txtTimKiem = new QUANLYTHUEXEOTO.CustomControls.Textbox();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.cbbGioiTinh = new System.Windows.Forms.ComboBox();
+            this.pictureBox6 = new System.Windows.Forms.PictureBox();
+            this.pictureBox5 = new System.Windows.Forms.PictureBox();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btnThem = new QUANLYTHUEXEOTO.CustomControls.CustomButton();
+            this.btnSua = new QUANLYTHUEXEOTO.CustomControls.CustomButton();
+            this.btnXoa = new QUANLYTHUEXEOTO.CustomControls.CustomButton();
+            this.txtMaKH = new QUANLYTHUEXEOTO.CustomControls.Textbox();
+            this.txtDiaChi = new QUANLYTHUEXEOTO.CustomControls.Textbox();
+            this.txtDienThoai = new QUANLYTHUEXEOTO.CustomControls.Textbox();
+            this.txtCCCD = new QUANLYTHUEXEOTO.CustomControls.Textbox();
+            this.txtHoTen = new QUANLYTHUEXEOTO.CustomControls.Textbox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvKhachHang)).BeginInit();
+            this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // dgvKhachHang
@@ -60,233 +73,357 @@ namespace QUANLYTHUEXEOTO.Forms
             this.dgvKhachHang.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvKhachHang.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvKhachHang.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.stt,
-            this.HOTENKH,
-            this.DIENTHOAI,
-            this.CMND,
-            this.DIACHI});
-            this.dgvKhachHang.Location = new System.Drawing.Point(239, 50);
+            this.MaKH,
+            this.TenKH,
+            this.CCCD,
+            this.SDT,
+            this.GioiTinh,
+            this.DiaChi});
+            this.dgvKhachHang.Location = new System.Drawing.Point(322, 50);
             this.dgvKhachHang.Name = "dgvKhachHang";
             this.dgvKhachHang.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvKhachHang.Size = new System.Drawing.Size(383, 340);
+            this.dgvKhachHang.Size = new System.Drawing.Size(530, 402);
             this.dgvKhachHang.TabIndex = 71;
+            this.dgvKhachHang.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvKhachHang_CellClick);
             this.dgvKhachHang.CellMouseLeave += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvKhachHang_CellMouseLeave);
             this.dgvKhachHang.CellMouseMove += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvKhachHang_CellMouseMove);
             // 
-            // stt
+            // MaKH
             // 
-            this.stt.FillWeight = 37.37905F;
-            this.stt.HeaderText = "STT";
-            this.stt.Name = "stt";
+            this.MaKH.DataPropertyName = "MaKH";
+            this.MaKH.FillWeight = 121.8274F;
+            this.MaKH.HeaderText = "Mã Khách Hàng";
+            this.MaKH.Name = "MaKH";
             // 
-            // HOTENKH
+            // TenKH
             // 
-            this.HOTENKH.FillWeight = 134.267F;
-            this.HOTENKH.HeaderText = "Họ Tên Khách Hàng";
-            this.HOTENKH.Name = "HOTENKH";
+            this.TenKH.DataPropertyName = "TenKH";
+            this.TenKH.FillWeight = 114.1138F;
+            this.TenKH.HeaderText = "Tên Khách Hàng";
+            this.TenKH.Name = "TenKH";
             // 
-            // DIENTHOAI
+            // CCCD
             // 
-            this.DIENTHOAI.FillWeight = 105.178F;
-            this.DIENTHOAI.HeaderText = "Điện Thoại";
-            this.DIENTHOAI.Name = "DIENTHOAI";
+            this.CCCD.DataPropertyName = "CCCD";
+            this.CCCD.FillWeight = 75.4989F;
+            this.CCCD.HeaderText = "CCCD";
+            this.CCCD.Name = "CCCD";
             // 
-            // CMND
+            // SDT
             // 
-            this.CMND.FillWeight = 88.8325F;
-            this.CMND.HeaderText = "CMND";
-            this.CMND.Name = "CMND";
+            this.SDT.DataPropertyName = "SDT";
+            this.SDT.FillWeight = 89.39098F;
+            this.SDT.HeaderText = "Điện Thoại";
+            this.SDT.Name = "SDT";
             // 
-            // DIACHI
+            // GioiTinh
             // 
-            this.DIACHI.FillWeight = 134.3435F;
-            this.DIACHI.HeaderText = "Địa Chỉ";
-            this.DIACHI.Name = "DIACHI";
+            this.GioiTinh.DataPropertyName = "GioiTinh";
+            this.GioiTinh.FillWeight = 114.1788F;
+            this.GioiTinh.HeaderText = "Giới Tính";
+            this.GioiTinh.Name = "GioiTinh";
             // 
-            // lblInfo
+            // DiaChi
             // 
-            this.lblInfo.AutoSize = true;
-            this.lblInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.lblInfo.Location = new System.Drawing.Point(23, 50);
-            this.lblInfo.Name = "lblInfo";
-            this.lblInfo.Size = new System.Drawing.Size(165, 16);
-            this.lblInfo.TabIndex = 70;
-            this.lblInfo.Text = "Thông Tin Khách Hàng";
+            this.DiaChi.DataPropertyName = "DiaChi";
+            this.DiaChi.FillWeight = 84.99019F;
+            this.DiaChi.HeaderText = "Địa Chỉ";
+            this.DiaChi.Name = "DiaChi";
             // 
             // lblChuDe
             // 
             this.lblChuDe.AutoSize = true;
-            this.lblChuDe.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.lblChuDe.Location = new System.Drawing.Point(235, 15);
+            this.lblChuDe.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblChuDe.Location = new System.Drawing.Point(350, 15);
             this.lblChuDe.Name = "lblChuDe";
-            this.lblChuDe.Size = new System.Drawing.Size(178, 20);
+            this.lblChuDe.Size = new System.Drawing.Size(257, 25);
             this.lblChuDe.TabIndex = 69;
-            this.lblChuDe.Text = "Quản Lý Khách Hàng";
+            this.lblChuDe.Text = "Danh Sách Khách Hàng";
             // 
-            // lblTimKiem
+            // groupBox1
             // 
-            this.lblTimKiem.AutoSize = true;
-            this.lblTimKiem.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.lblTimKiem.Location = new System.Drawing.Point(24, 84);
-            this.lblTimKiem.Name = "lblTimKiem";
-            this.lblTimKiem.Size = new System.Drawing.Size(62, 13);
-            this.lblTimKiem.TabIndex = 63;
-            this.lblTimKiem.Text = "Tìm Kiếm:";
+            this.groupBox1.Controls.Add(this.cbbGioiTinh);
+            this.groupBox1.Controls.Add(this.txtMaKH);
+            this.groupBox1.Controls.Add(this.pictureBox6);
+            this.groupBox1.Controls.Add(this.pictureBox5);
+            this.groupBox1.Controls.Add(this.txtDiaChi);
+            this.groupBox1.Controls.Add(this.pictureBox4);
+            this.groupBox1.Controls.Add(this.txtDienThoai);
+            this.groupBox1.Controls.Add(this.pictureBox3);
+            this.groupBox1.Controls.Add(this.txtCCCD);
+            this.groupBox1.Controls.Add(this.pictureBox2);
+            this.groupBox1.Controls.Add(this.txtHoTen);
+            this.groupBox1.Controls.Add(this.pictureBox1);
+            this.groupBox1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox1.Location = new System.Drawing.Point(12, 50);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(293, 402);
+            this.groupBox1.TabIndex = 101;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Thông Tin Khách Hàng";
             // 
-            // lblLocKH
+            // cbbGioiTinh
             // 
-            this.lblLocKH.AutoSize = true;
-            this.lblLocKH.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.lblLocKH.Location = new System.Drawing.Point(23, 189);
-            this.lblLocKH.Name = "lblLocKH";
-            this.lblLocKH.Size = new System.Drawing.Size(106, 13);
-            this.lblLocKH.TabIndex = 72;
-            this.lblLocKH.Text = "Lọc Khách Hàng:";
+            this.cbbGioiTinh.BackColor = System.Drawing.Color.MediumSlateBlue;
+            this.cbbGioiTinh.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbbGioiTinh.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.cbbGioiTinh.FormattingEnabled = true;
+            this.cbbGioiTinh.Items.AddRange(new object[] {
+            "Nam",
+            "Nữ"});
+            this.cbbGioiTinh.Location = new System.Drawing.Point(51, 358);
+            this.cbbGioiTinh.Name = "cbbGioiTinh";
+            this.cbbGioiTinh.Size = new System.Drawing.Size(225, 24);
+            this.cbbGioiTinh.TabIndex = 124;
             // 
-            // lblTuNgay
+            // pictureBox6
             // 
-            this.lblTuNgay.AutoSize = true;
-            this.lblTuNgay.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.lblTuNgay.Location = new System.Drawing.Point(23, 211);
-            this.lblTuNgay.Name = "lblTuNgay";
-            this.lblTuNgay.Size = new System.Drawing.Size(59, 13);
-            this.lblTuNgay.TabIndex = 73;
-            this.lblTuNgay.Text = "Từ Ngày:";
+            this.pictureBox6.Image = global::QUANLYTHUEXEOTO.Properties.Resources.key;
+            this.pictureBox6.Location = new System.Drawing.Point(14, 43);
+            this.pictureBox6.Name = "pictureBox6";
+            this.pictureBox6.Size = new System.Drawing.Size(30, 30);
+            this.pictureBox6.TabIndex = 9;
+            this.pictureBox6.TabStop = false;
             // 
-            // lblDenNgay
+            // pictureBox5
             // 
-            this.lblDenNgay.AutoSize = true;
-            this.lblDenNgay.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.lblDenNgay.Location = new System.Drawing.Point(23, 261);
-            this.lblDenNgay.Name = "lblDenNgay";
-            this.lblDenNgay.Size = new System.Drawing.Size(67, 13);
-            this.lblDenNgay.TabIndex = 76;
-            this.lblDenNgay.Text = "Đến Ngày:";
+            this.pictureBox5.Image = global::QUANLYTHUEXEOTO.Properties.Resources.gioitinh;
+            this.pictureBox5.Location = new System.Drawing.Point(14, 352);
+            this.pictureBox5.Name = "pictureBox5";
+            this.pictureBox5.Size = new System.Drawing.Size(30, 30);
+            this.pictureBox5.TabIndex = 8;
+            this.pictureBox5.TabStop = false;
             // 
-            // customDatePicker1
+            // pictureBox4
             // 
-            this.customDatePicker1.BorderColor = System.Drawing.Color.MediumSlateBlue;
-            this.customDatePicker1.BorderSize = 2;
-            this.customDatePicker1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F);
-            this.customDatePicker1.Location = new System.Drawing.Point(7, 227);
-            this.customDatePicker1.MinimumSize = new System.Drawing.Size(4, 25);
-            this.customDatePicker1.Name = "customDatePicker1";
-            this.customDatePicker1.Size = new System.Drawing.Size(225, 25);
-            this.customDatePicker1.SkinColor = System.Drawing.Color.White;
-            this.customDatePicker1.TabIndex = 83;
-            this.customDatePicker1.TextColor = System.Drawing.Color.Black;
+            this.pictureBox4.Image = global::QUANLYTHUEXEOTO.Properties.Resources.diachi;
+            this.pictureBox4.Location = new System.Drawing.Point(14, 291);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(30, 30);
+            this.pictureBox4.TabIndex = 6;
+            this.pictureBox4.TabStop = false;
             // 
-            // customDatePicker2
+            // pictureBox3
             // 
-            this.customDatePicker2.BorderColor = System.Drawing.Color.MediumSlateBlue;
-            this.customDatePicker2.BorderSize = 2;
-            this.customDatePicker2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F);
-            this.customDatePicker2.Location = new System.Drawing.Point(7, 277);
-            this.customDatePicker2.MinimumSize = new System.Drawing.Size(4, 25);
-            this.customDatePicker2.Name = "customDatePicker2";
-            this.customDatePicker2.Size = new System.Drawing.Size(225, 25);
-            this.customDatePicker2.SkinColor = System.Drawing.Color.White;
-            this.customDatePicker2.TabIndex = 84;
-            this.customDatePicker2.TextColor = System.Drawing.Color.Black;
+            this.pictureBox3.Image = global::QUANLYTHUEXEOTO.Properties.Resources.sdt;
+            this.pictureBox3.Location = new System.Drawing.Point(14, 230);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(30, 30);
+            this.pictureBox3.TabIndex = 4;
+            this.pictureBox3.TabStop = false;
             // 
-            // customButton1
+            // pictureBox2
             // 
-            this.customButton1.BackColor = System.Drawing.SystemColors.Control;
-            this.customButton1.BackgroundColor = System.Drawing.SystemColors.Control;
-            this.customButton1.BorderColor = System.Drawing.Color.MediumSlateBlue;
-            this.customButton1.BorderRadius = 20;
-            this.customButton1.BorderSize = 2;
-            this.customButton1.FlatAppearance.BorderSize = 0;
-            this.customButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.customButton1.ForeColor = System.Drawing.Color.Black;
-            this.customButton1.Location = new System.Drawing.Point(58, 133);
-            this.customButton1.Name = "customButton1";
-            this.customButton1.Size = new System.Drawing.Size(120, 40);
-            this.customButton1.TabIndex = 86;
-            this.customButton1.Text = "Tìm Kiếm";
-            this.customButton1.TextColor = System.Drawing.Color.Black;
-            this.customButton1.UseVisualStyleBackColor = false;
+            this.pictureBox2.Image = global::QUANLYTHUEXEOTO.Properties.Resources.cccd;
+            this.pictureBox2.Location = new System.Drawing.Point(14, 167);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(30, 30);
+            this.pictureBox2.TabIndex = 2;
+            this.pictureBox2.TabStop = false;
             // 
-            // customButton2
+            // pictureBox1
             // 
-            this.customButton2.BackColor = System.Drawing.SystemColors.Control;
-            this.customButton2.BackgroundColor = System.Drawing.SystemColors.Control;
-            this.customButton2.BorderColor = System.Drawing.Color.MediumSlateBlue;
-            this.customButton2.BorderRadius = 20;
-            this.customButton2.BorderSize = 2;
-            this.customButton2.FlatAppearance.BorderSize = 0;
-            this.customButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.customButton2.ForeColor = System.Drawing.Color.Black;
-            this.customButton2.Location = new System.Drawing.Point(58, 308);
-            this.customButton2.Name = "customButton2";
-            this.customButton2.Size = new System.Drawing.Size(120, 40);
-            this.customButton2.TabIndex = 87;
-            this.customButton2.Text = "Lọc Khách Hàng";
-            this.customButton2.TextColor = System.Drawing.Color.Black;
-            this.customButton2.UseVisualStyleBackColor = false;
+            this.pictureBox1.Image = global::QUANLYTHUEXEOTO.Properties.Resources.hoten;
+            this.pictureBox1.Location = new System.Drawing.Point(14, 106);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(30, 30);
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
             // 
-            // customButton3
+            // btnThem
             // 
-            this.customButton3.BackColor = System.Drawing.SystemColors.Control;
-            this.customButton3.BackgroundColor = System.Drawing.SystemColors.Control;
-            this.customButton3.BorderColor = System.Drawing.Color.MediumSlateBlue;
-            this.customButton3.BorderRadius = 20;
-            this.customButton3.BorderSize = 2;
-            this.customButton3.FlatAppearance.BorderSize = 0;
-            this.customButton3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.customButton3.ForeColor = System.Drawing.Color.Black;
-            this.customButton3.Location = new System.Drawing.Point(58, 364);
-            this.customButton3.Name = "customButton3";
-            this.customButton3.Size = new System.Drawing.Size(120, 40);
-            this.customButton3.TabIndex = 88;
-            this.customButton3.Text = "Hủy";
-            this.customButton3.TextColor = System.Drawing.Color.Black;
-            this.customButton3.UseVisualStyleBackColor = false;
+            this.btnThem.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnThem.BackColor = System.Drawing.SystemColors.Control;
+            this.btnThem.BackgroundColor = System.Drawing.SystemColors.Control;
+            this.btnThem.BorderColor = System.Drawing.Color.MediumSlateBlue;
+            this.btnThem.BorderRadius = 20;
+            this.btnThem.BorderSize = 2;
+            this.btnThem.FlatAppearance.BorderSize = 0;
+            this.btnThem.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Lime;
+            this.btnThem.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.btnThem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnThem.ForeColor = System.Drawing.Color.Black;
+            this.btnThem.Location = new System.Drawing.Point(540, 471);
+            this.btnThem.Name = "btnThem";
+            this.btnThem.Size = new System.Drawing.Size(100, 40);
+            this.btnThem.TabIndex = 104;
+            this.btnThem.Text = "Thêm";
+            this.btnThem.TextColor = System.Drawing.Color.Black;
+            this.btnThem.UseVisualStyleBackColor = false;
+            this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 
-            // txtTimKiem
+            // btnSua
             // 
-            this.txtTimKiem.BackColor = System.Drawing.SystemColors.Window;
-            this.txtTimKiem.BorderColor = System.Drawing.Color.MediumSlateBlue;
-            this.txtTimKiem.BorderFocusColor = System.Drawing.Color.Black;
-            this.txtTimKiem.BorderRadius = 15;
-            this.txtTimKiem.BorderSize = 2;
-            this.txtTimKiem.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTimKiem.ForeColor = System.Drawing.Color.Black;
-            this.txtTimKiem.Location = new System.Drawing.Point(7, 96);
-            this.txtTimKiem.Margin = new System.Windows.Forms.Padding(4);
-            this.txtTimKiem.Multiline = true;
-            this.txtTimKiem.Name = "txtTimKiem";
-            this.txtTimKiem.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
-            this.txtTimKiem.PasswordChar = false;
-            this.txtTimKiem.PlaceholderColor = System.Drawing.Color.DarkGray;
-            this.txtTimKiem.PlaceholderText = "";
-            this.txtTimKiem.Size = new System.Drawing.Size(225, 30);
-            this.txtTimKiem.TabIndex = 89;
-            this.txtTimKiem.Texts = "";
-            this.txtTimKiem.UnderlinedStyle = false;
+            this.btnSua.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSua.BackColor = System.Drawing.SystemColors.Control;
+            this.btnSua.BackgroundColor = System.Drawing.SystemColors.Control;
+            this.btnSua.BorderColor = System.Drawing.Color.MediumSlateBlue;
+            this.btnSua.BorderRadius = 20;
+            this.btnSua.BorderSize = 2;
+            this.btnSua.FlatAppearance.BorderSize = 0;
+            this.btnSua.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Lime;
+            this.btnSua.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.btnSua.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSua.ForeColor = System.Drawing.Color.Black;
+            this.btnSua.Location = new System.Drawing.Point(646, 471);
+            this.btnSua.Name = "btnSua";
+            this.btnSua.Size = new System.Drawing.Size(100, 40);
+            this.btnSua.TabIndex = 103;
+            this.btnSua.Text = "Sửa";
+            this.btnSua.TextColor = System.Drawing.Color.Black;
+            this.btnSua.UseVisualStyleBackColor = false;
+            this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
+            // 
+            // btnXoa
+            // 
+            this.btnXoa.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnXoa.BackColor = System.Drawing.SystemColors.Control;
+            this.btnXoa.BackgroundColor = System.Drawing.SystemColors.Control;
+            this.btnXoa.BorderColor = System.Drawing.Color.MediumSlateBlue;
+            this.btnXoa.BorderRadius = 20;
+            this.btnXoa.BorderSize = 2;
+            this.btnXoa.FlatAppearance.BorderSize = 0;
+            this.btnXoa.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Lime;
+            this.btnXoa.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.btnXoa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnXoa.ForeColor = System.Drawing.Color.Black;
+            this.btnXoa.Location = new System.Drawing.Point(752, 471);
+            this.btnXoa.Name = "btnXoa";
+            this.btnXoa.Size = new System.Drawing.Size(100, 40);
+            this.btnXoa.TabIndex = 102;
+            this.btnXoa.Text = "Xóa";
+            this.btnXoa.TextColor = System.Drawing.Color.Black;
+            this.btnXoa.UseVisualStyleBackColor = false;
+            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
+            // 
+            // txtMaKH
+            // 
+            this.txtMaKH.BackColor = System.Drawing.SystemColors.Window;
+            this.txtMaKH.BorderColor = System.Drawing.Color.MediumSlateBlue;
+            this.txtMaKH.BorderFocusColor = System.Drawing.Color.Black;
+            this.txtMaKH.BorderRadius = 15;
+            this.txtMaKH.BorderSize = 2;
+            this.txtMaKH.Enabled = false;
+            this.txtMaKH.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMaKH.Location = new System.Drawing.Point(51, 43);
+            this.txtMaKH.Margin = new System.Windows.Forms.Padding(4);
+            this.txtMaKH.Multiline = true;
+            this.txtMaKH.Name = "txtMaKH";
+            this.txtMaKH.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
+            this.txtMaKH.PasswordChar = false;
+            this.txtMaKH.PlaceholderColor = System.Drawing.Color.DarkGray;
+            this.txtMaKH.PlaceholderText = "";
+            this.txtMaKH.Size = new System.Drawing.Size(225, 30);
+            this.txtMaKH.TabIndex = 10;
+            this.txtMaKH.Texts = "";
+            this.txtMaKH.UnderlinedStyle = false;
+            // 
+            // txtDiaChi
+            // 
+            this.txtDiaChi.BackColor = System.Drawing.SystemColors.Window;
+            this.txtDiaChi.BorderColor = System.Drawing.Color.MediumSlateBlue;
+            this.txtDiaChi.BorderFocusColor = System.Drawing.Color.Black;
+            this.txtDiaChi.BorderRadius = 15;
+            this.txtDiaChi.BorderSize = 2;
+            this.txtDiaChi.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDiaChi.Location = new System.Drawing.Point(51, 291);
+            this.txtDiaChi.Margin = new System.Windows.Forms.Padding(4);
+            this.txtDiaChi.Multiline = true;
+            this.txtDiaChi.Name = "txtDiaChi";
+            this.txtDiaChi.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
+            this.txtDiaChi.PasswordChar = false;
+            this.txtDiaChi.PlaceholderColor = System.Drawing.Color.DarkGray;
+            this.txtDiaChi.PlaceholderText = "";
+            this.txtDiaChi.Size = new System.Drawing.Size(225, 30);
+            this.txtDiaChi.TabIndex = 5;
+            this.txtDiaChi.Texts = "";
+            this.txtDiaChi.UnderlinedStyle = false;
+            // 
+            // txtDienThoai
+            // 
+            this.txtDienThoai.BackColor = System.Drawing.SystemColors.Window;
+            this.txtDienThoai.BorderColor = System.Drawing.Color.MediumSlateBlue;
+            this.txtDienThoai.BorderFocusColor = System.Drawing.Color.Black;
+            this.txtDienThoai.BorderRadius = 15;
+            this.txtDienThoai.BorderSize = 2;
+            this.txtDienThoai.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDienThoai.Location = new System.Drawing.Point(51, 230);
+            this.txtDienThoai.Margin = new System.Windows.Forms.Padding(4);
+            this.txtDienThoai.Multiline = true;
+            this.txtDienThoai.Name = "txtDienThoai";
+            this.txtDienThoai.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
+            this.txtDienThoai.PasswordChar = false;
+            this.txtDienThoai.PlaceholderColor = System.Drawing.Color.DarkGray;
+            this.txtDienThoai.PlaceholderText = "";
+            this.txtDienThoai.Size = new System.Drawing.Size(225, 30);
+            this.txtDienThoai.TabIndex = 4;
+            this.txtDienThoai.Texts = "";
+            this.txtDienThoai.UnderlinedStyle = false;
+            // 
+            // txtCCCD
+            // 
+            this.txtCCCD.BackColor = System.Drawing.SystemColors.Window;
+            this.txtCCCD.BorderColor = System.Drawing.Color.MediumSlateBlue;
+            this.txtCCCD.BorderFocusColor = System.Drawing.Color.Black;
+            this.txtCCCD.BorderRadius = 15;
+            this.txtCCCD.BorderSize = 2;
+            this.txtCCCD.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCCCD.Location = new System.Drawing.Point(51, 167);
+            this.txtCCCD.Margin = new System.Windows.Forms.Padding(4);
+            this.txtCCCD.Multiline = true;
+            this.txtCCCD.Name = "txtCCCD";
+            this.txtCCCD.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
+            this.txtCCCD.PasswordChar = false;
+            this.txtCCCD.PlaceholderColor = System.Drawing.Color.DarkGray;
+            this.txtCCCD.PlaceholderText = "";
+            this.txtCCCD.Size = new System.Drawing.Size(225, 30);
+            this.txtCCCD.TabIndex = 3;
+            this.txtCCCD.Texts = "";
+            this.txtCCCD.UnderlinedStyle = false;
+            // 
+            // txtHoTen
+            // 
+            this.txtHoTen.BackColor = System.Drawing.SystemColors.Window;
+            this.txtHoTen.BorderColor = System.Drawing.Color.MediumSlateBlue;
+            this.txtHoTen.BorderFocusColor = System.Drawing.Color.Black;
+            this.txtHoTen.BorderRadius = 15;
+            this.txtHoTen.BorderSize = 2;
+            this.txtHoTen.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtHoTen.Location = new System.Drawing.Point(51, 106);
+            this.txtHoTen.Margin = new System.Windows.Forms.Padding(4);
+            this.txtHoTen.Multiline = true;
+            this.txtHoTen.Name = "txtHoTen";
+            this.txtHoTen.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
+            this.txtHoTen.PasswordChar = false;
+            this.txtHoTen.PlaceholderColor = System.Drawing.Color.DarkGray;
+            this.txtHoTen.PlaceholderText = "";
+            this.txtHoTen.Size = new System.Drawing.Size(225, 30);
+            this.txtHoTen.TabIndex = 2;
+            this.txtHoTen.Texts = "";
+            this.txtHoTen.UnderlinedStyle = false;
             // 
             // frmCustomer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(644, 416);
-            this.Controls.Add(this.txtTimKiem);
-            this.Controls.Add(this.customButton3);
-            this.Controls.Add(this.customButton2);
-            this.Controls.Add(this.customButton1);
-            this.Controls.Add(this.customDatePicker2);
-            this.Controls.Add(this.customDatePicker1);
-            this.Controls.Add(this.lblDenNgay);
-            this.Controls.Add(this.lblTuNgay);
-            this.Controls.Add(this.lblLocKH);
+            this.ClientSize = new System.Drawing.Size(864, 523);
+            this.Controls.Add(this.btnThem);
+            this.Controls.Add(this.btnSua);
+            this.Controls.Add(this.btnXoa);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.dgvKhachHang);
-            this.Controls.Add(this.lblInfo);
             this.Controls.Add(this.lblChuDe);
-            this.Controls.Add(this.lblTimKiem);
             this.Name = "frmCustomer";
             this.Text = "Quản Lý Khách Hàng";
             this.Load += new System.EventHandler(this.frmCustomer_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvKhachHang)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -295,22 +432,28 @@ namespace QUANLYTHUEXEOTO.Forms
         #endregion
 
         private System.Windows.Forms.DataGridView dgvKhachHang;
-        private System.Windows.Forms.Label lblInfo;
         private System.Windows.Forms.Label lblChuDe;
-        private System.Windows.Forms.Label lblTimKiem;
-        private System.Windows.Forms.Label lblLocKH;
-        private System.Windows.Forms.Label lblTuNgay;
-        private System.Windows.Forms.Label lblDenNgay;
-        private CustomControls.CustomDatePicker customDatePicker1;
-        private CustomControls.CustomDatePicker customDatePicker2;
-        private CustomControls.CustomButton customButton1;
-        private CustomControls.CustomButton customButton2;
-        private CustomControls.CustomButton customButton3;
-        private CustomControls.Textbox txtTimKiem;
-        private System.Windows.Forms.DataGridViewTextBoxColumn stt;
-        private System.Windows.Forms.DataGridViewTextBoxColumn HOTENKH;
-        private System.Windows.Forms.DataGridViewTextBoxColumn DIENTHOAI;
-        private System.Windows.Forms.DataGridViewTextBoxColumn CMND;
-        private System.Windows.Forms.DataGridViewTextBoxColumn DIACHI;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.PictureBox pictureBox5;
+        private CustomControls.Textbox txtDiaChi;
+        private System.Windows.Forms.PictureBox pictureBox4;
+        private CustomControls.Textbox txtDienThoai;
+        private System.Windows.Forms.PictureBox pictureBox3;
+        private CustomControls.Textbox txtCCCD;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private CustomControls.Textbox txtHoTen;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private CustomControls.CustomButton btnXoa;
+        private CustomControls.CustomButton btnSua;
+        private CustomControls.CustomButton btnThem;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MaKH;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TenKH;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CCCD;
+        private System.Windows.Forms.DataGridViewTextBoxColumn SDT;
+        private System.Windows.Forms.DataGridViewTextBoxColumn GioiTinh;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DiaChi;
+        private CustomControls.Textbox txtMaKH;
+        private System.Windows.Forms.PictureBox pictureBox6;
+        private System.Windows.Forms.ComboBox cbbGioiTinh;
     }
 }

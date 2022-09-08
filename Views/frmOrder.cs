@@ -8,8 +8,6 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-using DAL.DTO;
-using BUS;
 using System.Collections.ObjectModel;
 using System.Text.RegularExpressions;
 using QUANLYTHUEXEOTO.Views;
@@ -18,19 +16,12 @@ namespace QUANLYTHUEXEOTO.Forms
 {
     public partial class frmOrder : Form
     {
-        ObservableCollection<PhieuThue_Custom> lsvPhieuThueCusToms;
-        private int maNV;
-        public int MaNV { get => maNV; set => maNV = value; }
+        
         public frmOrder()
         {
             InitializeComponent();
-            lsvPhieuThueCusToms = new ObservableCollection<PhieuThue_Custom>(PhieuThueBUS.GetInstance().getDataPhieuThue());
-            dgvPhieuThue.DataSource = lsvPhieuThueCusToms;
-        }
-
-        public frmOrder(int maNV) : this()
-        {
-            this.MaNV = maNV;
+            /*lsvPhieuThueCusToms = new ObservableCollection<PhieuThue_Custom>(PhieuThueBUS.GetInstance().getDataPhieuThue());
+            dgvPhieuThue.DataSource = lsvPhieuThueCusToms;*/
         }
 
         private void LoadTheme()
@@ -51,12 +42,6 @@ namespace QUANLYTHUEXEOTO.Forms
         private void frmOrder_Load(object sender, EventArgs e)
         {
             LoadTheme();
-        }
-
-        void nhanThongBaoLuuTuFormDatXe()
-        {
-            lsvPhieuThueCusToms = new ObservableCollection<PhieuThue_Custom>(PhieuThueBUS.GetInstance().getDataPhieuThue());
-            dgvPhieuThue.DataSource = lsvPhieuThueCusToms;
         }
 
         private void btnChiTiet_Click(object sender, EventArgs e)
@@ -84,7 +69,7 @@ namespace QUANLYTHUEXEOTO.Forms
         }
 
         //Tìm kiếm tên khách hàng
-        private bool filterTimKiem(object obj)
+        /*private bool filterTimKiem(object obj)
         {
             if (String.IsNullOrEmpty(txtTimKiem.Texts))
                 return true;
@@ -94,7 +79,7 @@ namespace QUANLYTHUEXEOTO.Forms
                 string timkiem = RemoveVietnameseTone(txtTimKiem.Texts);
                 return objTenKH.Contains(timkiem);
             }
-        }
+        }*/
 
         private void txtTimKiem__TextChanged(object sender, EventArgs e)
         {
@@ -120,13 +105,6 @@ namespace QUANLYTHUEXEOTO.Forms
                    // MessageBox.Show("Xóa phiếu thuê thất bại !\n Lỗi: " + error, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 //}
             //}
-        }
-
-        private void btnDatXe_Click(object sender, EventArgs e)
-        {
-            frmBookCar frm = new frmBookCar(MaNV);
-            frm.luuPhieuDatXe = new frmBookCar.dlg(nhanThongBaoLuuTuFormDatXe);
-            frm.Show();
         }
     }
 }

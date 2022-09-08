@@ -33,10 +33,8 @@ namespace QUANLYTHUEXEOTO
             this.panelMenu = new System.Windows.Forms.Panel();
             this.btnReports = new System.Windows.Forms.Button();
             this.btnCustomers = new System.Windows.Forms.Button();
-            this.btnCalendars = new System.Windows.Forms.Button();
             this.btnEmployees = new System.Windows.Forms.Button();
             this.btnOrders = new System.Windows.Forms.Button();
-            this.btnAccessories = new System.Windows.Forms.Button();
             this.btnProducts = new System.Windows.Forms.Button();
             this.panelLogo = new System.Windows.Forms.Panel();
             this.lblName = new System.Windows.Forms.Label();
@@ -59,10 +57,8 @@ namespace QUANLYTHUEXEOTO
             this.panelMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
             this.panelMenu.Controls.Add(this.btnReports);
             this.panelMenu.Controls.Add(this.btnCustomers);
-            this.panelMenu.Controls.Add(this.btnCalendars);
             this.panelMenu.Controls.Add(this.btnEmployees);
             this.panelMenu.Controls.Add(this.btnOrders);
-            this.panelMenu.Controls.Add(this.btnAccessories);
             this.panelMenu.Controls.Add(this.btnProducts);
             this.panelMenu.Controls.Add(this.panelLogo);
             this.panelMenu.Dock = System.Windows.Forms.DockStyle.Left;
@@ -80,7 +76,7 @@ namespace QUANLYTHUEXEOTO
             this.btnReports.ForeColor = System.Drawing.Color.Gainsboro;
             this.btnReports.Image = ((System.Drawing.Image)(resources.GetObject("btnReports.Image")));
             this.btnReports.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnReports.Location = new System.Drawing.Point(0, 440);
+            this.btnReports.Location = new System.Drawing.Point(0, 320);
             this.btnReports.Name = "btnReports";
             this.btnReports.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
             this.btnReports.Size = new System.Drawing.Size(220, 60);
@@ -100,7 +96,7 @@ namespace QUANLYTHUEXEOTO
             this.btnCustomers.ForeColor = System.Drawing.Color.Gainsboro;
             this.btnCustomers.Image = ((System.Drawing.Image)(resources.GetObject("btnCustomers.Image")));
             this.btnCustomers.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCustomers.Location = new System.Drawing.Point(0, 380);
+            this.btnCustomers.Location = new System.Drawing.Point(0, 260);
             this.btnCustomers.Name = "btnCustomers";
             this.btnCustomers.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
             this.btnCustomers.Size = new System.Drawing.Size(220, 60);
@@ -111,26 +107,6 @@ namespace QUANLYTHUEXEOTO
             this.btnCustomers.UseVisualStyleBackColor = true;
             this.btnCustomers.Click += new System.EventHandler(this.btnCustomers_Click);
             // 
-            // btnCalendars
-            // 
-            this.btnCalendars.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnCalendars.FlatAppearance.BorderSize = 0;
-            this.btnCalendars.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCalendars.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btnCalendars.ForeColor = System.Drawing.Color.Gainsboro;
-            this.btnCalendars.Image = ((System.Drawing.Image)(resources.GetObject("btnCalendars.Image")));
-            this.btnCalendars.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCalendars.Location = new System.Drawing.Point(0, 320);
-            this.btnCalendars.Name = "btnCalendars";
-            this.btnCalendars.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
-            this.btnCalendars.Size = new System.Drawing.Size(220, 60);
-            this.btnCalendars.TabIndex = 5;
-            this.btnCalendars.Text = "     Lịch Làm Việc";
-            this.btnCalendars.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCalendars.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnCalendars.UseVisualStyleBackColor = true;
-            this.btnCalendars.Click += new System.EventHandler(this.btnCalendars_Click);
-            // 
             // btnEmployees
             // 
             this.btnEmployees.Dock = System.Windows.Forms.DockStyle.Top;
@@ -140,7 +116,7 @@ namespace QUANLYTHUEXEOTO
             this.btnEmployees.ForeColor = System.Drawing.Color.Gainsboro;
             this.btnEmployees.Image = ((System.Drawing.Image)(resources.GetObject("btnEmployees.Image")));
             this.btnEmployees.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEmployees.Location = new System.Drawing.Point(0, 260);
+            this.btnEmployees.Location = new System.Drawing.Point(0, 200);
             this.btnEmployees.Name = "btnEmployees";
             this.btnEmployees.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
             this.btnEmployees.Size = new System.Drawing.Size(220, 60);
@@ -160,7 +136,7 @@ namespace QUANLYTHUEXEOTO
             this.btnOrders.ForeColor = System.Drawing.Color.Gainsboro;
             this.btnOrders.Image = ((System.Drawing.Image)(resources.GetObject("btnOrders.Image")));
             this.btnOrders.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnOrders.Location = new System.Drawing.Point(0, 200);
+            this.btnOrders.Location = new System.Drawing.Point(0, 140);
             this.btnOrders.Name = "btnOrders";
             this.btnOrders.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
             this.btnOrders.Size = new System.Drawing.Size(220, 60);
@@ -170,26 +146,6 @@ namespace QUANLYTHUEXEOTO
             this.btnOrders.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnOrders.UseVisualStyleBackColor = true;
             this.btnOrders.Click += new System.EventHandler(this.btnOrders_Click);
-            // 
-            // btnAccessories
-            // 
-            this.btnAccessories.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnAccessories.FlatAppearance.BorderSize = 0;
-            this.btnAccessories.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAccessories.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btnAccessories.ForeColor = System.Drawing.Color.Gainsboro;
-            this.btnAccessories.Image = ((System.Drawing.Image)(resources.GetObject("btnAccessories.Image")));
-            this.btnAccessories.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAccessories.Location = new System.Drawing.Point(0, 140);
-            this.btnAccessories.Name = "btnAccessories";
-            this.btnAccessories.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
-            this.btnAccessories.Size = new System.Drawing.Size(220, 60);
-            this.btnAccessories.TabIndex = 2;
-            this.btnAccessories.Text = "     Phụ Kiện";
-            this.btnAccessories.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAccessories.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnAccessories.UseVisualStyleBackColor = true;
-            this.btnAccessories.Click += new System.EventHandler(this.btnAccessories_Click);
             // 
             // btnProducts
             // 
@@ -257,7 +213,7 @@ namespace QUANLYTHUEXEOTO
             this.panelTitleBar.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelTitleBar.Location = new System.Drawing.Point(220, 0);
             this.panelTitleBar.Name = "panelTitleBar";
-            this.panelTitleBar.Size = new System.Drawing.Size(1044, 80);
+            this.panelTitleBar.Size = new System.Drawing.Size(1139, 80);
             this.panelTitleBar.TabIndex = 1;
             this.panelTitleBar.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelTitleBar_MouseDown);
             // 
@@ -268,7 +224,7 @@ namespace QUANLYTHUEXEOTO
             this.btnMinimize.FlatAppearance.BorderSize = 0;
             this.btnMinimize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMinimize.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btnMinimize.Location = new System.Drawing.Point(944, 2);
+            this.btnMinimize.Location = new System.Drawing.Point(1039, 2);
             this.btnMinimize.Margin = new System.Windows.Forms.Padding(2);
             this.btnMinimize.Name = "btnMinimize";
             this.btnMinimize.Size = new System.Drawing.Size(30, 30);
@@ -284,7 +240,7 @@ namespace QUANLYTHUEXEOTO
             this.btnMaximize.FlatAppearance.BorderSize = 0;
             this.btnMaximize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMaximize.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btnMaximize.Location = new System.Drawing.Point(978, 2);
+            this.btnMaximize.Location = new System.Drawing.Point(1073, 2);
             this.btnMaximize.Margin = new System.Windows.Forms.Padding(2);
             this.btnMaximize.Name = "btnMaximize";
             this.btnMaximize.Size = new System.Drawing.Size(30, 30);
@@ -301,7 +257,7 @@ namespace QUANLYTHUEXEOTO
             this.btnClose.FlatAppearance.BorderSize = 0;
             this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClose.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btnClose.Location = new System.Drawing.Point(1012, 2);
+            this.btnClose.Location = new System.Drawing.Point(1107, 2);
             this.btnClose.Margin = new System.Windows.Forms.Padding(2);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(30, 30);
@@ -329,11 +285,11 @@ namespace QUANLYTHUEXEOTO
             this.lblTitle.AutoSize = true;
             this.lblTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.lblTitle.ForeColor = System.Drawing.Color.White;
-            this.lblTitle.Location = new System.Drawing.Point(304, 30);
+            this.lblTitle.Location = new System.Drawing.Point(351, 30);
             this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(78, 26);
+            this.lblTitle.Size = new System.Drawing.Size(142, 26);
             this.lblTitle.TabIndex = 0;
-            this.lblTitle.Text = "HOME";
+            this.lblTitle.Text = "TRANG CHỦ";
             this.lblTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // panelDesktopPane
@@ -341,14 +297,14 @@ namespace QUANLYTHUEXEOTO
             this.panelDesktopPane.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelDesktopPane.Location = new System.Drawing.Point(220, 80);
             this.panelDesktopPane.Name = "panelDesktopPane";
-            this.panelDesktopPane.Size = new System.Drawing.Size(1044, 601);
+            this.panelDesktopPane.Size = new System.Drawing.Size(1139, 601);
             this.panelDesktopPane.TabIndex = 2;
             // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1264, 681);
+            this.ClientSize = new System.Drawing.Size(1359, 681);
             this.Controls.Add(this.panelDesktopPane);
             this.Controls.Add(this.panelTitleBar);
             this.Controls.Add(this.panelMenu);
@@ -372,10 +328,8 @@ namespace QUANLYTHUEXEOTO
         private System.Windows.Forms.Panel panelLogo;
         private System.Windows.Forms.Button btnReports;
         private System.Windows.Forms.Button btnCustomers;
-        private System.Windows.Forms.Button btnCalendars;
         private System.Windows.Forms.Button btnEmployees;
         private System.Windows.Forms.Button btnOrders;
-        private System.Windows.Forms.Button btnAccessories;
         private System.Windows.Forms.Panel panelTitleBar;
         private System.Windows.Forms.Label lblTitle;
         private System.Windows.Forms.Label lblName;

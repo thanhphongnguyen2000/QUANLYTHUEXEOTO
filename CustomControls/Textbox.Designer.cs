@@ -39,7 +39,7 @@ namespace QUANLYTHUEXEOTO.CustomControls
             this.textBox1.Location = new System.Drawing.Point(15, 6);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(200, 20);
+            this.textBox1.Size = new System.Drawing.Size(150, 20);
             this.textBox1.TabIndex = 0;
             this.textBox1.Click += new System.EventHandler(this.textBox1_Click);
             this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
@@ -57,7 +57,7 @@ namespace QUANLYTHUEXEOTO.CustomControls
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Textbox";
             this.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
-            this.Size = new System.Drawing.Size(250, 30);
+            this.Size = new System.Drawing.Size(200, 30);
             this.ResumeLayout(false);
             this.PerformLayout();
 

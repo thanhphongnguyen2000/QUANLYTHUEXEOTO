@@ -8,34 +8,33 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-using DAL;
-using DAL.DTO;
-using BUS;
 using System.Collections.ObjectModel;
 using System.Runtime.InteropServices;
 using System.Drawing.Drawing2D;
+using QUANLYTHUEXEOTO.BUS;
 
 namespace QUANLYTHUEXEOTO.Views
 {
     public partial class frmBookCar : Form
     {
         public delegate void dlg();
-
         public dlg luuPhieuDatXe;
-        ObservableCollection<XeTrong> lsvXeTrongs;
-        ObservableCollection<tb_CT_PhieuThue> lsvXeDaChons;
-        List<XeTrong> lsvXeCaches;
-        private int maNV;
+        public string tenXe;
+
+        XeBUS busXE;
+
+        public int maXe, maNV;
 
         //Fields
         private int borderRadius = 20;
         private int borderSize = 2;
         private Color borderColor = Color.FromArgb(128, 128, 255);
 
-        public int MaNV { get => maNV; set => maNV = value; }
         public frmBookCar()
         {
             InitializeComponent();
+            busXE = new XeBUS();
+
             this.FormBorderStyle = FormBorderStyle.None;
             this.Padding = new Padding(borderSize);
             this.panelTitleBar.BackColor = borderColor;
@@ -217,28 +216,11 @@ namespace QUANLYTHUEXEOTO.Views
             SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
 
-        public frmBookCar(int maNV) : this()
-        {
-            this.MaNV = maNV;
-        }
-
         #region method
-        private void getXeTrongTheoNgay()
-        {
-            DateTime ngayThue = DateTime.Parse(dtpNgayThue.Text);
-            DateTime ngayTra = DateTime.Parse(dtpNgayTra.Text);
-            List<XeTrong> lsTemp = XeBUS.GetInstance().getXeTrong(ngayThue, ngayTra);
-            var ls = (from l in lsTemp
-                      where !(from pdc in lsvXeDaChons select pdc.SoXe).Contains(l.SoXe)
-                      select l).ToList();
-            lsvXeTrongs = new ObservableCollection<XeTrong>(ls);
-            dgvXeTrong.DataSource = lsvXeTrongs;
-
-        }
 
         private bool kiemTraDayDuThongTin()
         {
-            //Họ tên
+            //Kiểm tra textbox họ tên có rỗng hay không
             if (string.IsNullOrWhiteSpace(txtHoTen.Texts))
             {
                 txtHoTen.Focus();
@@ -292,7 +274,7 @@ namespace QUANLYTHUEXEOTO.Views
                 }
             }
 
-            //Kiểm tra ô nhập địa chỉ
+            //Kiểm tra textbox nhập địa chỉ
             if (string.IsNullOrWhiteSpace(txtDiaChi.Texts))
             {
                 txtDiaChi.Focus();
@@ -300,40 +282,54 @@ namespace QUANLYTHUEXEOTO.Views
                 return false;
             }
 
-            //Kiểm tra ô giới tính
+            //Kiểm tra combobox giới tính
             if (string.IsNullOrWhiteSpace(cbbGioiTinh.Texts))
             {
-                MessageBox.Show("Nhập đầy đủ giới tính !", "Thông báo!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Bạn chưa chọn giới tính !", "Thông báo!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
 
-            //Kiểm tra xem đã có phòng nào được chọn chưa
-            if (lsvXeDaChons.Count == 0)
+            //Kiểm tra xem đã có xe được chọn chưa
+            if (dgvXeChon.Rows.Count == 0)
             {
-                MessageBox.Show("Vui lòng chọn phòng trước khi lưu !", "Thông báo!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Vui lòng chọn xe trước khi lưu !", "Thông báo!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
             return true;
         }
         #endregion
 
+        //Hiển thị xe trống lên Datagridview
+        private void HienThiDSSanPhamXeTrong()
+        {
+            busXE.LayDSChiTietXeTrong(dgvXeTrong);
+            dgvXeTrong.Columns[0].Width = (int)(dgvXeTrong.Width * 0.7);
+            dgvXeTrong.Columns[1].Width = (int)(dgvXeTrong.Width * 0.3);
+        }
+
+        //Lấy danh sách xe theo mã xe truyền vào
+        private void LayDSXeDaChon(int maXe)
+        {
+            busXE.LayDSXeDaChon(dgvXeChon,maXe);
+            dgvXeTrong.Columns[0].Width = (int)(dgvXeTrong.Width * 0.7);
+            dgvXeTrong.Columns[1].Width = (int)(dgvXeTrong.Width * 0.3);
+        }
+
         #region event
         private void frmBookCar_Load(object sender, EventArgs e)
         {
             //Khởi tạo giá trị cho ngày, giờ Bắt đầu và Kết thúc là ngày giờ hiện tại
-            dtpNgayThue.Text = new DateTime(2021, 10, 8).ToShortDateString();
-            dtpNgayTra.Text = new DateTime(2021, 10, 8).ToShortDateString();
+            dtpNgayThue.Text = new DateTime(2022, 09, 07).ToShortDateString();
+            dtpNgayTra.Text = new DateTime(2022, 09, 10).ToShortDateString();
 
             //Khởi tạo sự kiện thay đổi ngày hoặc giờ
             dtpNgayThue.ValueChanged += dtpNgay_ValueChanged;
             dtpNgayTra.ValueChanged += dtpNgay_ValueChanged;
 
 
-            //Lấy danh sách phòng trống có thể dặt từ DB lên dựa vào ngày giờ Bắt đầu, Kết thúc
-            lsvXeDaChons = new ObservableCollection<tb_CT_PhieuThue>();
-            lsvXeCaches = new List<XeTrong>();
-            dgvXeDaChon.DataSource = lsvXeDaChons;
-            getXeTrongTheoNgay();
+            //Lấy danh sách xe trống và xe đã chọn
+            LayDSXeDaChon(maXe);
+            HienThiDSSanPhamXeTrong();
         }
 
         //Kiểm tra giá trị thay đổi trong DateTimePicker
@@ -362,7 +358,7 @@ namespace QUANLYTHUEXEOTO.Views
                 dtpNgayTra.Text = ngayTra;
                 return;
             }
-            getXeTrongTheoNgay();
+            /*getXeTrongTheoNgay();*/
         }
 
         private void btnHuy_Click(object sender, EventArgs e)
@@ -372,7 +368,7 @@ namespace QUANLYTHUEXEOTO.Views
 
         private void btnLuu_Click(object sender, EventArgs e)
         {
-            //Khai báo biến cần thiết
+            /*//Khai báo biến cần thiết
             int maKHThemMoi;
             string errorKhachHang;
             string errorPhieuThue;
@@ -417,17 +413,17 @@ namespace QUANLYTHUEXEOTO.Views
                     {
                         NgayLapPhieu = DateTime.Now,
                         MaKH = maKHThemMoi,
-                        MaNV = this.MaNV
+                        MaNV = this.maNV
                     };
 
                     if (PhieuThueBUS.GetInstance().addPhieuThue(pt, out errorPhieuThue))
                     {
                         //B3: Thêm CT phiếu thuê
-                        foreach (tb_CT_PhieuThue item in lsvXeDaChons)
+                        foreach (tb_CT_PhieuThue item in dgvXeChon)
                         {
 
                             item.MaPT = pt.MaPT;
-                            item.TinhTrangThue = "Xe đã đặt";
+                            item.TinhTrangThue = "Xe Đã Đặt";
                             if (CT_PhieuThueBUS.GetInstance().addCTPhieuThue(item, out errorCTPT))
                             {
                                 dem++;
@@ -445,15 +441,15 @@ namespace QUANLYTHUEXEOTO.Views
                     }
 
                 }
-                if (dem == lsvXeDaChons.Count && dem != 0)
+                if (dem == dgvXeChon.Rows.Count && dem != 0)
                 {
                     if (themKhachHangMoi)
                     {
-                        MessageBox.Show("Thêm khách hàng mới và đặt phòng thành công !", "Thông báo!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show("Thêm khách hàng mới và đặt xe thành công !", "Thông báo!", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                     else
                     {
-                        MessageBox.Show("Khách hàng đã tồn tại đặt phòng thành công !", "Thông báo!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show("Khách hàng đã tồn tại và đặt xe thành công !", "Thông báo!", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
 
                     if (luuPhieuDatXe != null)
@@ -464,39 +460,37 @@ namespace QUANLYTHUEXEOTO.Views
                 }
                 else
                 {
-                    MessageBox.Show("Đặt phòng thất bại  !", "Thông báo!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Đặt xe thất bại  !", "Thông báo!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
-            }
+            }*/
         }
 
         private void btnThemXe_Click(object sender, EventArgs e)
         {
-            //XeTrong exeTrong = (sender as Button).DataContext as XeTrong;
-            //lsvXeCaches.Add(exeTrong);
-            //lsvXeTrongs.Remove(exeTrong);
-            //tb_CT_PhieuThue xeDaChon = new tb_CT_PhieuThue()
-            //{
-                //SoXe = exeTrong.SoXe,
-                //SoChoNgoi = 4,
-                //NgayThue = DateTime.Parse(dtpNgayThue.Text),
-                //NgayTra = DateTime.Parse(dtpNgayTra.Text)
-            //};
-            //lsvXeDaChons.Add(xeDaChon);
+            //Truyền cho Datagridview khác
+            /*dgvXeTrong.Rows.Remove(tenXe);*/
+            /*dgvXeChon.Rows.Add(tenXe);*/
+        }
+
+        private void dgvXeTrong_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            //Lấy mã xe đang được chọn
+            tenXe = dgvXeTrong.CurrentRow.Cells[0].Value.ToString();
         }
 
         private void btnXoaXe_Click(object sender, EventArgs e)
         {
-            //tb_CT_PhieuThue xeDaChon = (sender as Button).DataContext as tb_CT_PhieuThue;
-            //foreach (XeTrong pt in lsvXeCaches)
-            //{
-                //if (pt.SoXe.Equals(xeDaChon.SoXe))
-                //{
-                    //lsvXeTrongs.Add(pt);
-                   // lsvXeCaches.Remove(pt);
-                    //break;
-                //}
-            //}
-            //lsvXeDaChons.Remove(xeDaChon);
+            /*tb_CT_PhieuThue xeDaChon = (sender as Button).DataContext as tb_CT_PhieuThue;
+            foreach (XeTrong pt in dgvXeTrong)
+            {
+                if (pt.MaXe.Equals(xeDaChon.MaXe))
+                {
+                    dgvXeTrong.Rows.Add(pt);
+                    dgvXeChon.Rows.Remove(pt);
+                    break;
+                }
+            }
+            dgvXeChon.Rows.Remove(xeDaChon);*/
         }
         #endregion
     }

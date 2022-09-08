@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="2944fc1b671d4b0aadac8ffd9ba6da2e" Name="Diagram1">
+        <EntityTypeShape EntityType="QuanLyThueXeModel.sysdiagram" Width="1.5" PointX="8.5" PointY="2.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanLyThueXeModel.tb_CT_PhieuThue" Width="1.5" PointX="5.25" PointY="2.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanLyThueXeModel.tb_KhachHang" Width="1.5" PointX="3.125" PointY="6" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanLyThueXeModel.tb_LoaiXe" Width="1.5" PointX="5.25" PointY="6.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanLyThueXeModel.tb_NhanVien" Width="1.5" PointX="0.75" PointY="2.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanLyThueXeModel.tb_PhieuThue" Width="1.5" PointX="3" PointY="3" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanLyThueXeModel.tb_TaiKhoan" Width="1.5" PointX="0.75" PointY="6.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanLyThueXeModel.tb_Xe" Width="1.5" PointX="7.875" PointY="4.875" IsExpanded="true" />
+        <AssociationConnector Association="QuanLyThueXeModel.FK_tb_CT_PhieuThue_tb_PhieuThue" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyThueXeModel.FK_tb_CT_PhieuThue_tb_Xe" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyThueXeModel.FK_tb_PhieuThue_tb_KhachHang" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyThueXeModel.FK_tb_Xe_tb_LoaiXe" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyThueXeModel.FK_tb_PhieuThue_tb_NhanVien" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyThueXeModel.FK_tb_TaiKhoan_tb_NhanVien" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

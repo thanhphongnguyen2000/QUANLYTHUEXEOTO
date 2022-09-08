@@ -51,6 +51,9 @@
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -62,6 +65,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BUS\KhachHangBUS.cs" />
+    <Compile Include="BUS\NhanVienBUS.cs" />
+    <Compile Include="BUS\TaiKhoanBUS.cs" />
+    <Compile Include="BUS\XeBUS.cs" />
     <Compile Include="CustomControls\CustomButton.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -80,17 +87,54 @@
     <Compile Include="CustomControls\Textbox.Designer.cs">
       <DependentUpon>Textbox.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\frmAccessories.cs">
-      <SubType>Form</SubType>
+    <Compile Include="DAL\KhachHangDAL.cs" />
+    <Compile Include="DAL\NhanVienDAL.cs" />
+    <Compile Include="DAL\TaiKhoanDAL.cs" />
+    <Compile Include="DAL\XeDAL.cs" />
+    <Compile Include="QuanLyThueXe.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QuanLyThueXe.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="Views\frmAccessories.Designer.cs">
-      <DependentUpon>frmAccessories.cs</DependentUpon>
+    <Compile Include="QuanLyThueXe.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QuanLyThueXe.tt</DependentUpon>
     </Compile>
-    <Compile Include="Views\frmAdd_Up_Employee.cs">
-      <SubType>Form</SubType>
+    <Compile Include="QuanLyThueXe.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QuanLyThueXe.edmx</DependentUpon>
     </Compile>
-    <Compile Include="Views\frmAdd_Up_Employee.Designer.cs">
-      <DependentUpon>frmAdd_Up_Employee.cs</DependentUpon>
+    <Compile Include="sp_helpdiagramdefinition_Result.cs">
+      <DependentUpon>QuanLyThueXe.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sp_helpdiagrams_Result.cs">
+      <DependentUpon>QuanLyThueXe.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sysdiagram.cs">
+      <DependentUpon>QuanLyThueXe.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tb_CT_PhieuThue.cs">
+      <DependentUpon>QuanLyThueXe.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tb_KhachHang.cs">
+      <DependentUpon>QuanLyThueXe.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tb_LoaiXe.cs">
+      <DependentUpon>QuanLyThueXe.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tb_NhanVien.cs">
+      <DependentUpon>QuanLyThueXe.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tb_PhieuThue.cs">
+      <DependentUpon>QuanLyThueXe.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tb_TaiKhoan.cs">
+      <DependentUpon>QuanLyThueXe.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tb_Xe.cs">
+      <DependentUpon>QuanLyThueXe.tt</DependentUpon>
     </Compile>
     <Compile Include="Views\frmBookCar.cs">
       <SubType>Form</SubType>
@@ -98,11 +142,11 @@
     <Compile Include="Views\frmBookCar.Designer.cs">
       <DependentUpon>frmBookCar.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\frmCalendar.cs">
+    <Compile Include="Views\frmCar.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Views\frmCalendar.Designer.cs">
-      <DependentUpon>frmCalendar.cs</DependentUpon>
+    <Compile Include="Views\frmCar.Designer.cs">
+      <DependentUpon>frmCar.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\frmCustomer.cs">
       <SubType>Form</SubType>
@@ -128,12 +172,6 @@
     <Compile Include="Views\frmOrderDetails.Designer.cs">
       <DependentUpon>frmOrderDetails.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\frmProduct.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Views\frmProduct.Designer.cs">
-      <DependentUpon>frmProduct.cs</DependentUpon>
-    </Compile>
     <Compile Include="Views\frmReport.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -158,17 +196,11 @@
     <EmbeddedResource Include="CustomControls\Textbox.resx">
       <DependentUpon>Textbox.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\frmAccessories.resx">
-      <DependentUpon>frmAccessories.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Views\frmAdd_Up_Employee.resx">
-      <DependentUpon>frmAdd_Up_Employee.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Views\frmBookCar.resx">
       <DependentUpon>frmBookCar.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\frmCalendar.resx">
-      <DependentUpon>frmCalendar.cs</DependentUpon>
+    <EmbeddedResource Include="Views\frmCar.resx">
+      <DependentUpon>frmCar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\frmCustomer.resx">
       <DependentUpon>frmCustomer.cs</DependentUpon>
@@ -181,9 +213,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\frmOrderDetails.resx">
       <DependentUpon>frmOrderDetails.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Views\frmProduct.resx">
-      <DependentUpon>frmProduct.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\frmReport.resx">
       <DependentUpon>frmReport.cs</DependentUpon>
@@ -219,6 +248,13 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <EntityDeploy Include="QuanLyThueXe.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>QuanLyThueXe.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="QuanLyThueXe.edmx.diagram">
+      <DependentUpon>QuanLyThueXe.edmx</DependentUpon>
+    </None>
     <None Include="Resources\iconShow.png" />
   </ItemGroup>
   <ItemGroup>
@@ -235,16 +271,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\hoten.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\BUS\BUS.csproj">
-      <Project>{475ab81e-ed6e-4cf8-a5ef-7850daf3c5e6}</Project>
-      <Name>BUS</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\DAL\DAL.csproj">
-      <Project>{d306afcd-0f54-4daf-8e38-1d47778ca9b8}</Project>
-      <Name>DAL</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\ngaysinh.png" />
@@ -269,6 +295,27 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\employee.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\send.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\key.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="QuanLyThueXe.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>QuanLyThueXe.edmx</DependentUpon>
+      <LastGenOutput>QuanLyThueXe.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="QuanLyThueXe.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>QuanLyThueXe.edmx</DependentUpon>
+      <LastGenOutput>QuanLyThueXe.cs</LastGenOutput>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

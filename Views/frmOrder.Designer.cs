@@ -38,7 +38,6 @@ namespace QUANLYTHUEXEOTO.Forms
             this.txtTimKiem = new QUANLYTHUEXEOTO.CustomControls.Textbox();
             this.btnXoa = new QUANLYTHUEXEOTO.CustomControls.CustomButton();
             this.btnChiTiet = new QUANLYTHUEXEOTO.CustomControls.CustomButton();
-            this.btnDatXe = new QUANLYTHUEXEOTO.CustomControls.CustomButton();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPhieuThue)).BeginInit();
             this.SuspendLayout();
             // 
@@ -99,6 +98,7 @@ namespace QUANLYTHUEXEOTO.Forms
             this.txtTimKiem.BorderFocusColor = System.Drawing.Color.Black;
             this.txtTimKiem.BorderRadius = 15;
             this.txtTimKiem.BorderSize = 2;
+            this.txtTimKiem.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTimKiem.Location = new System.Drawing.Point(12, 54);
             this.txtTimKiem.Margin = new System.Windows.Forms.Padding(4);
             this.txtTimKiem.Multiline = true;
@@ -122,6 +122,8 @@ namespace QUANLYTHUEXEOTO.Forms
             this.btnXoa.BorderRadius = 20;
             this.btnXoa.BorderSize = 2;
             this.btnXoa.FlatAppearance.BorderSize = 0;
+            this.btnXoa.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Lime;
+            this.btnXoa.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.btnXoa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnXoa.ForeColor = System.Drawing.Color.Black;
             this.btnXoa.Location = new System.Drawing.Point(532, 359);
@@ -142,6 +144,8 @@ namespace QUANLYTHUEXEOTO.Forms
             this.btnChiTiet.BorderRadius = 20;
             this.btnChiTiet.BorderSize = 2;
             this.btnChiTiet.FlatAppearance.BorderSize = 0;
+            this.btnChiTiet.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Lime;
+            this.btnChiTiet.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.btnChiTiet.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnChiTiet.ForeColor = System.Drawing.Color.Black;
             this.btnChiTiet.Location = new System.Drawing.Point(426, 359);
@@ -153,32 +157,11 @@ namespace QUANLYTHUEXEOTO.Forms
             this.btnChiTiet.UseVisualStyleBackColor = false;
             this.btnChiTiet.Click += new System.EventHandler(this.btnChiTiet_Click);
             // 
-            // btnDatXe
-            // 
-            this.btnDatXe.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnDatXe.BackColor = System.Drawing.SystemColors.Control;
-            this.btnDatXe.BackgroundColor = System.Drawing.SystemColors.Control;
-            this.btnDatXe.BorderColor = System.Drawing.Color.MediumSlateBlue;
-            this.btnDatXe.BorderRadius = 20;
-            this.btnDatXe.BorderSize = 2;
-            this.btnDatXe.FlatAppearance.BorderSize = 0;
-            this.btnDatXe.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDatXe.ForeColor = System.Drawing.Color.Black;
-            this.btnDatXe.Location = new System.Drawing.Point(320, 359);
-            this.btnDatXe.Name = "btnDatXe";
-            this.btnDatXe.Size = new System.Drawing.Size(100, 40);
-            this.btnDatXe.TabIndex = 98;
-            this.btnDatXe.Text = "Đặt Xe";
-            this.btnDatXe.TextColor = System.Drawing.Color.Black;
-            this.btnDatXe.UseVisualStyleBackColor = false;
-            this.btnDatXe.Click += new System.EventHandler(this.btnDatXe_Click);
-            // 
             // frmOrder
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(644, 416);
-            this.Controls.Add(this.btnDatXe);
             this.Controls.Add(this.btnChiTiet);
             this.Controls.Add(this.btnXoa);
             this.Controls.Add(this.txtTimKiem);
@@ -199,7 +182,6 @@ namespace QUANLYTHUEXEOTO.Forms
         private CustomControls.Textbox txtTimKiem;
         private CustomControls.CustomButton btnXoa;
         private CustomControls.CustomButton btnChiTiet;
-        private CustomControls.CustomButton btnDatXe;
         private System.Windows.Forms.DataGridViewTextBoxColumn MaPT;
         private System.Windows.Forms.DataGridViewTextBoxColumn TenKH;
         private System.Windows.Forms.DataGridViewTextBoxColumn NgayLapPhieu;

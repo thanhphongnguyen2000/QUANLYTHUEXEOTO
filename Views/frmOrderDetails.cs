@@ -8,9 +8,6 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-using DAL;
-using DAL.DTO;
-using BUS;
 
 namespace QUANLYTHUEXEOTO.Forms
 {
@@ -22,7 +19,7 @@ namespace QUANLYTHUEXEOTO.Forms
             InitializeComponent();
         }
 
-        public frmOrderDetails(PhieuThue_Custom ptct) : this()
+        /*public frmOrderDetails(PhieuThue_Custom ptct) : this()
         {
             lblKhachHang.Text = ptct.TenKH;
             lblNgayLapHD.Text = ptct.NgayLapPhieu.ToString();
@@ -31,7 +28,7 @@ namespace QUANLYTHUEXEOTO.Forms
             lsvCTPT = new List<tb_CT_PhieuThue>();
             lsvCTPT = CT_PhieuThueBUS.GetInstance().getCTPhieuThueTheoMaPT(ptct.MaPT);
             dgvCT_PhieuThue.DataSource = lsvCTPT;
-        }
+        }*/
 
         private void LoadTheme()
         {

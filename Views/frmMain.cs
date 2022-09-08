@@ -104,12 +104,7 @@ namespace QUANLYTHUEXEOTO
 
         private void btnProducts_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new Forms.frmProduct(), sender);
-        }
-
-        private void btnAccessories_Click(object sender, EventArgs e)
-        {
-            OpenChildForm(new Forms.frmAccessories(), sender);
+            OpenChildForm(new Views.frmCar(), sender);
         }
 
         private void btnOrders_Click(object sender, EventArgs e)
@@ -120,11 +115,6 @@ namespace QUANLYTHUEXEOTO
         private void btnEmployees_Click(object sender, EventArgs e)
         {
             OpenChildForm(new Forms.frmEmployee(), sender);
-        }
-
-        private void btnCalendars_Click(object sender, EventArgs e)
-        {
-            OpenChildForm(new Forms.frmCalendar(), sender);
         }
 
         private void btnCustomers_Click(object sender, EventArgs e)
@@ -147,7 +137,7 @@ namespace QUANLYTHUEXEOTO
         private void Reset()
         {
             DisableButton();
-            lblTitle.Text = "HOME";
+            lblTitle.Text = "TRANG CHỦ";
             panelTitleBar.BackColor = Color.FromArgb(0, 150, 136);
             panelLogo.BackColor = Color.FromArgb(39, 39, 58);
             lblName.BackColor= Color.FromArgb(39, 39, 58);

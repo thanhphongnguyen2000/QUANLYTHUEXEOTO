@@ -30,7 +30,6 @@ namespace QUANLYTHUEXEOTO.Forms
                 }
             }
             label4.ForeColor = ThemeColor.SecondaryColor;
-            label5.ForeColor = ThemeColor.PrimaryColor;
         }
 
         private void frmReport_Load(object sender, EventArgs e)
